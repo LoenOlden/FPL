@@ -1,0 +1,191 @@
+Gameweek,Home Team,Away Team,Kickoff
+GW1,Man Utd,Fulham,2024-08-16 19:00:00
+GW1,Ipswich,Liverpool,2024-08-17 11:30:00
+GW1,Arsenal,Wolves,2024-08-17 14:00:00
+GW1,Everton,Brighton,2024-08-17 14:00:00
+GW1,Newcastle,Southampton,2024-08-17 14:00:00
+GW1,Nott'm Forest,Bournemouth,2024-08-17 14:00:00
+GW1,West Ham,Aston Villa,2024-08-17 16:30:00
+GW1,Brentford,Crystal Palace,2024-08-18 13:00:00
+GW1,Chelsea,Man City,2024-08-18 15:30:00
+GW1,Leicester,Spurs,2024-08-19 19:00:00
+GW2,Brighton,Man Utd,2024-08-24 11:30:00
+GW2,Crystal Palace,West Ham,2024-08-24 14:00:00
+GW2,Fulham,Leicester,2024-08-24 14:00:00
+GW2,Man City,Ipswich,2024-08-24 14:00:00
+GW2,Southampton,Nott'm Forest,2024-08-24 14:00:00
+GW2,Spurs,Everton,2024-08-24 14:00:00
+GW2,Aston Villa,Arsenal,2024-08-24 16:30:00
+GW2,Bournemouth,Newcastle,2024-08-25 13:00:00
+GW2,Wolves,Chelsea,2024-08-25 13:00:00
+GW2,Liverpool,Brentford,2024-08-25 15:30:00
+GW3,Arsenal,Brighton,2024-08-31 11:30:00
+GW3,Brentford,Southampton,2024-08-31 14:00:00
+GW3,Everton,Bournemouth,2024-08-31 14:00:00
+GW3,Ipswich,Fulham,2024-08-31 14:00:00
+GW3,Leicester,Aston Villa,2024-08-31 14:00:00
+GW3,Nott'm Forest,Wolves,2024-08-31 14:00:00
+GW3,West Ham,Man City,2024-08-31 16:30:00
+GW3,Chelsea,Crystal Palace,2024-09-01 12:30:00
+GW3,Newcastle,Spurs,2024-09-01 12:30:00
+GW3,Man Utd,Liverpool,2024-09-01 15:00:00
+GW4,Southampton,Man Utd,2024-09-14 11:30:00
+GW4,Brighton,Ipswich,2024-09-14 14:00:00
+GW4,Crystal Palace,Leicester,2024-09-14 14:00:00
+GW4,Fulham,West Ham,2024-09-14 14:00:00
+GW4,Liverpool,Nott'm Forest,2024-09-14 14:00:00
+GW4,Man City,Brentford,2024-09-14 14:00:00
+GW4,Aston Villa,Everton,2024-09-14 16:30:00
+GW4,Bournemouth,Chelsea,2024-09-14 19:00:00
+GW4,Spurs,Arsenal,2024-09-15 13:00:00
+GW4,Wolves,Newcastle,2024-09-15 15:30:00
+GW5,West Ham,Chelsea,2024-09-21 11:30:00
+GW5,Aston Villa,Wolves,2024-09-21 14:00:00
+GW5,Fulham,Newcastle,2024-09-21 14:00:00
+GW5,Leicester,Everton,2024-09-21 14:00:00
+GW5,Liverpool,Bournemouth,2024-09-21 14:00:00
+GW5,Southampton,Ipswich,2024-09-21 14:00:00
+GW5,Spurs,Brentford,2024-09-21 14:00:00
+GW5,Crystal Palace,Man Utd,2024-09-21 16:30:00
+GW5,Brighton,Nott'm Forest,2024-09-22 13:00:00
+GW5,Man City,Arsenal,2024-09-22 15:30:00
+GW6,Newcastle,Man City,2024-09-28 11:30:00
+GW6,Arsenal,Leicester,2024-09-28 14:00:00
+GW6,Brentford,West Ham,2024-09-28 14:00:00
+GW6,Chelsea,Brighton,2024-09-28 14:00:00
+GW6,Everton,Crystal Palace,2024-09-28 14:00:00
+GW6,Nott'm Forest,Fulham,2024-09-28 14:00:00
+GW6,Wolves,Liverpool,2024-09-28 16:30:00
+GW6,Ipswich,Aston Villa,2024-09-29 13:00:00
+GW6,Man Utd,Spurs,2024-09-29 15:30:00
+GW6,Bournemouth,Southampton,2024-09-30 19:00:00
+GW7,Arsenal,Southampton,2024-10-05 14:00:00
+GW7,Aston Villa,Man Utd,2024-10-05 14:00:00
+GW7,Brentford,Wolves,2024-10-05 14:00:00
+GW7,Brighton,Spurs,2024-10-05 14:00:00
+GW7,Chelsea,Nott'm Forest,2024-10-05 14:00:00
+GW7,Crystal Palace,Liverpool,2024-10-05 14:00:00
+GW7,Everton,Newcastle,2024-10-05 14:00:00
+GW7,Leicester,Bournemouth,2024-10-05 14:00:00
+GW7,Man City,Fulham,2024-10-05 14:00:00
+GW7,West Ham,Ipswich,2024-10-05 14:00:00
+GW8,Bournemouth,Arsenal,2024-10-19 14:00:00
+GW8,Fulham,Aston Villa,2024-10-19 14:00:00
+GW8,Ipswich,Everton,2024-10-19 14:00:00
+GW8,Liverpool,Chelsea,2024-10-19 14:00:00
+GW8,Man Utd,Brentford,2024-10-19 14:00:00
+GW8,Newcastle,Brighton,2024-10-19 14:00:00
+GW8,Nott'm Forest,Crystal Palace,2024-10-19 14:00:00
+GW8,Southampton,Leicester,2024-10-19 14:00:00
+GW8,Spurs,West Ham,2024-10-19 14:00:00
+GW8,Wolves,Man City,2024-10-19 14:00:00
+GW9,Arsenal,Liverpool,2024-10-26 14:00:00
+GW9,Aston Villa,Bournemouth,2024-10-26 14:00:00
+GW9,Brentford,Ipswich,2024-10-26 14:00:00
+GW9,Brighton,Wolves,2024-10-26 14:00:00
+GW9,Chelsea,Newcastle,2024-10-26 14:00:00
+GW9,Crystal Palace,Spurs,2024-10-26 14:00:00
+GW9,Everton,Fulham,2024-10-26 14:00:00
+GW9,Leicester,Nott'm Forest,2024-10-26 14:00:00
+GW9,Man City,Southampton,2024-10-26 14:00:00
+GW9,West Ham,Man Utd,2024-10-26 14:00:00
+GW10,Bournemouth,Man City,2024-11-02 15:00:00
+GW10,Fulham,Brentford,2024-11-02 15:00:00
+GW10,Ipswich,Leicester,2024-11-02 15:00:00
+GW10,Liverpool,Brighton,2024-11-02 15:00:00
+GW10,Man Utd,Chelsea,2024-11-02 15:00:00
+GW10,Newcastle,Arsenal,2024-11-02 15:00:00
+GW10,Nott'm Forest,West Ham,2024-11-02 15:00:00
+GW10,Southampton,Everton,2024-11-02 15:00:00
+GW10,Spurs,Aston Villa,2024-11-02 15:00:00
+GW10,Wolves,Crystal Palace,2024-11-02 15:00:00
+GW11,Brentford,Bournemouth,2024-11-09 15:00:00
+GW11,Brighton,Man City,2024-11-09 15:00:00
+GW11,Chelsea,Arsenal,2024-11-09 15:00:00
+GW11,Crystal Palace,Fulham,2024-11-09 15:00:00
+GW11,Liverpool,Aston Villa,2024-11-09 15:00:00
+GW11,Man Utd,Leicester,2024-11-09 15:00:00
+GW11,Nott'm Forest,Newcastle,2024-11-09 15:00:00
+GW11,Spurs,Ipswich,2024-11-09 15:00:00
+GW11,West Ham,Everton,2024-11-09 15:00:00
+GW11,Wolves,Southampton,2024-11-09 15:00:00
+GW12,Arsenal,Nott'm Forest,2024-11-23 15:00:00
+GW12,Aston Villa,Crystal Palace,2024-11-23 15:00:00
+GW12,Bournemouth,Brighton,2024-11-23 15:00:00
+GW12,Everton,Brentford,2024-11-23 15:00:00
+GW12,Fulham,Wolves,2024-11-23 15:00:00
+GW12,Ipswich,Man Utd,2024-11-23 15:00:00
+GW12,Leicester,Chelsea,2024-11-23 15:00:00
+GW12,Man City,Spurs,2024-11-23 15:00:00
+GW12,Newcastle,West Ham,2024-11-23 15:00:00
+GW12,Southampton,Liverpool,2024-11-23 15:00:00
+GW13,Brentford,Leicester,2024-11-30 15:00:00
+GW13,Brighton,Southampton,2024-11-30 15:00:00
+GW13,Chelsea,Aston Villa,2024-11-30 15:00:00
+GW13,Crystal Palace,Newcastle,2024-11-30 15:00:00
+GW13,Liverpool,Man City,2024-11-30 15:00:00
+GW13,Man Utd,Everton,2024-11-30 15:00:00
+GW13,Nott'm Forest,Ipswich,2024-11-30 15:00:00
+GW13,Spurs,Fulham,2024-11-30 15:00:00
+GW13,West Ham,Arsenal,2024-11-30 15:00:00
+GW13,Wolves,Bournemouth,2024-11-30 15:00:00
+GW14,Arsenal,Man Utd,2024-12-03 19:45:00
+GW14,Aston Villa,Brentford,2024-12-03 19:45:00
+GW14,Bournemouth,Spurs,2024-12-03 19:45:00
+GW14,Everton,Wolves,2024-12-03 19:45:00
+GW14,Fulham,Brighton,2024-12-03 19:45:00
+GW14,Ipswich,Crystal Palace,2024-12-03 19:45:00
+GW14,Leicester,West Ham,2024-12-03 19:45:00
+GW14,Man City,Nott'm Forest,2024-12-04 19:45:00
+GW14,Newcastle,Liverpool,2024-12-04 19:45:00
+GW14,Southampton,Chelsea,2024-12-04 19:45:00
+GW15,Aston Villa,Southampton,2024-12-07 15:00:00
+GW15,Brentford,Newcastle,2024-12-07 15:00:00
+GW15,Crystal Palace,Man City,2024-12-07 15:00:00
+GW15,Everton,Liverpool,2024-12-07 15:00:00
+GW15,Fulham,Arsenal,2024-12-07 15:00:00
+GW15,Ipswich,Bournemouth,2024-12-07 15:00:00
+GW15,Leicester,Brighton,2024-12-07 15:00:00
+GW15,Man Utd,Nott'm Forest,2024-12-07 15:00:00
+GW15,Spurs,Chelsea,2024-12-07 15:00:00
+GW15,West Ham,Wolves,2024-12-07 15:00:00
+GW16,Arsenal,Everton,2024-12-14 15:00:00
+GW16,Bournemouth,West Ham,2024-12-14 15:00:00
+GW16,Brighton,Crystal Palace,2024-12-14 15:00:00
+GW16,Chelsea,Brentford,2024-12-14 15:00:00
+GW16,Liverpool,Fulham,2024-12-14 15:00:00
+GW16,Man City,Man Utd,2024-12-14 15:00:00
+GW16,Newcastle,Leicester,2024-12-14 15:00:00
+GW16,Nott'm Forest,Aston Villa,2024-12-14 15:00:00
+GW16,Southampton,Spurs,2024-12-14 15:00:00
+GW16,Wolves,Ipswich,2024-12-14 15:00:00
+GW17,Aston Villa,Man City,2024-12-21 15:00:00
+GW17,Brentford,Nott'm Forest,2024-12-21 15:00:00
+GW17,Crystal Palace,Arsenal,2024-12-21 15:00:00
+GW17,Everton,Chelsea,2024-12-21 15:00:00
+GW17,Fulham,Southampton,2024-12-21 15:00:00
+GW17,Ipswich,Newcastle,2024-12-21 15:00:00
+GW17,Leicester,Wolves,2024-12-21 15:00:00
+GW17,Man Utd,Bournemouth,2024-12-21 15:00:00
+GW17,Spurs,Liverpool,2024-12-21 15:00:00
+GW17,West Ham,Brighton,2024-12-21 15:00:00
+GW18,Arsenal,Ipswich,2024-12-26 15:00:00
+GW18,Bournemouth,Crystal Palace,2024-12-26 15:00:00
+GW18,Brighton,Brentford,2024-12-26 15:00:00
+GW18,Chelsea,Fulham,2024-12-26 15:00:00
+GW18,Liverpool,Leicester,2024-12-26 15:00:00
+GW18,Man City,Everton,2024-12-26 15:00:00
+GW18,Newcastle,Aston Villa,2024-12-26 15:00:00
+GW18,Nott'm Forest,Spurs,2024-12-26 15:00:00
+GW18,Southampton,West Ham,2024-12-26 15:00:00
+GW18,Wolves,Man Utd,2024-12-26 15:00:00
+GW19,Aston Villa,Brighton,2024-12-29 15:00:00
+GW19,Brentford,Arsenal,2024-12-29 15:00:00
+GW19,Crystal Palace,Southampton,2024-12-29 15:00:00
+GW19,Everton,Nott'm Forest,2024-12-29 15:00:00
+GW19,Fulham,Bournemouth,2024-12-29 15:00:00
+GW19,Ipswich,Chelsea,2024-12-29 15:00:00
+GW19,Leicester,Man City,2024-12-29 15:00:00
+GW19,Man Utd,Newcastle,2024-12-29 15:00:00
+GW19,Spurs,Wolves,2024-12-29 15:00:00
+GW19,West Ham,Liverpool,2024-12-29 15:00:00

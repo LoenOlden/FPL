@@ -1,0 +1,7 @@
+(using players_data1.csv)
+updateteams.py (creates updated_teams_data.py)
+updatepositions.py (creates updated_positions_data.py)
+expectedminutes.py (creates updated_player_data.py)
+fplformula.py (creates sorted_players_data.py)
+fixturesformula.py (creates final_player_data.py)
+main.py (solver)
