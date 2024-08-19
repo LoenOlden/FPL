@@ -45,7 +45,7 @@ def save_player_data_to_csv(players, file_path='players_data.csv'):
                     'web_name': player['web_name'],
                     'team': player['team'],
                     'position': player['element_type'],
-                    'cost': player['now_cost'] / 10,  # Cost is in tenths of a million
+                    'cost': player['now_cost'] / 10, 
                     'total_points': player['total_points'],
                     'expected_goals': player.get('expected_goals', 'N/A'),
                     'expected_assists': player.get('expected_assists', 'N/A'),

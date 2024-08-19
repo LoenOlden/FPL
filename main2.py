@@ -5,7 +5,7 @@ from final_player_data import player_gameweek_data
 # Set the budget and other values
 budget = 100.0 
 bench_budget = 18.0
-HIT_VALUE = 4.0
+HIT_VALUE = 2.5
 decay_rate = 0.97
 num_weeks = 6
 start_week = 2

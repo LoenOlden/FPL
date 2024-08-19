@@ -3,56 +3,48 @@ from sklearn.linear_model import LinearRegression
 from scipy.optimize import minimize
 from updated_teams_data import teams_data
 
-def calculate_avg_min2(starts, avg_min, minutes, position):
-    if position == 1:  # Position 1 is for goalkeepers
-        if minutes > 2700:
-            return 89
-        elif minutes > 1710:
-            return 80
-        elif minutes < 800:
-            return 0
-        else:
-            return avg_min
-    else:
-        if starts == 0:
-            return 0
-        elif 1 <= starts <= 5:
-            return 15
-        elif 6 <= starts <= 29:
-            return avg_min
-        elif starts > 30 and minutes > 2700:
-            return 90
-        else:
-            return avg_min
-
 def process_team_data(teams_data):
     all_players = []
     
     for players in teams_data.values():
         for player in players:
-            avg_min = player['avg_min']
-            starts = player['starts']
-            minutes = player['minutes']
-            position = player['position']
-            avg_min2 = calculate_avg_min2(starts, avg_min, minutes, position)
-            
-            player_data = player.copy()
-            player_data['avg_min2'] = avg_min2
-            player_data['avg_minutes'] = (avg_min + avg_min2) / 2
-            
+            # Use available data only
+            player_data = {
+                "id": player["id"],
+                "web_name": player["web_name"],
+                "team": player["team"],
+                "position": player["position"],
+                "cost": player["cost"],
+                "minutes": player["minutes"],
+                "saves_per_90": player["saves_per_90"],
+                "xG90": player["xG90"],
+                "xA90": player["xA90"],
+                "xGC90": player["xGC90"],
+                "csP": player["csP"],
+                "xcg23": player["xcg23"],
+                "xcg45": player["xcg45"],
+                "3shots": player["3shots"],
+                "6shots": player["6shots"],
+            }
             all_players.append(player_data)
     
     return all_players
 
 def predict_expected_minutes(players_df):
-    # Ensure the columns used for training include 'avg_min2'
-    X = players_df[['avg_min', 'avg_min2', 'minutes', 'starts']]
-    y = players_df['avg_minutes']  # Use the average as the target variable
+    # Use available features for prediction
+    X = players_df[['minutes', 'position', 'xG90', 'xA90', 'xGC90', 'csP', 'xcg23', 'xcg45', '3shots', '6shots']]
+    y = players_df['minutes']  # Use 'minutes' as the target variable, as it's the closest thing we have to the past average
+
     model = LinearRegression()
     model.fit(X, y)
     
-    # Predict initial expected minutes
+    # Predict initial expected minutes, ensuring they sum to a reasonable amount
     players_df['initial_expected_minutes'] = model.predict(X)
+    
+    # Normalize the predicted minutes to 900 for each team
+    players_df['initial_expected_minutes'] = players_df.groupby('team')['initial_expected_minutes'].transform(
+        lambda x: 900 * (x / x.sum())
+    )
     
     return players_df
 
@@ -77,21 +69,18 @@ def adjust_minutes(players_df):
         main_keepers = goalkeepers[goalkeepers['minutes'] >= 1710].copy()
         reserve_keepers = goalkeepers[goalkeepers['minutes'] < 1710].copy()
 
-        # Separate players based on minutes
         main_players = other_players[other_players['minutes'] >= 1710].copy()
         reserve_players = other_players[other_players['minutes'] < 1710].copy()
 
         # Objective function for outfield players
         def objective_players(minutes):
-            # Update 'expected_minutes' in the copied DataFrames
             main_players_copy = main_players.copy()
             reserve_players_copy = reserve_players.copy()
             
             main_players_copy['expected_minutes'] = minutes[:len(main_players)]
             reserve_players_copy['expected_minutes'] = minutes[len(main_players):]
             
-            # Calculate the mean squared error for outfield players
-            mse_penalty = ((main_players_copy['avg_minutes'] - main_players_copy['expected_minutes']) ** 2).sum()
+            mse_penalty = ((main_players_copy['minutes'] - main_players_copy['expected_minutes']) ** 2).sum()
             
             return mse_penalty
 
@@ -101,15 +90,13 @@ def adjust_minutes(players_df):
 
         # Objective function for goalkeepers
         def objective_keepers(minutes):
-            # Update 'expected_minutes' in the copied DataFrames
             main_keepers_copy = main_keepers.copy()
             reserve_keepers_copy = reserve_keepers.copy()
             
             main_keepers_copy['expected_minutes'] = minutes[:len(main_keepers)]
             reserve_keepers_copy['expected_minutes'] = minutes[len(main_keepers):]
             
-            # Calculate the mean squared error for goalkeepers
-            mse_penalty = ((main_keepers_copy['avg_minutes'] - main_keepers_copy['expected_minutes']) ** 2).sum()
+            mse_penalty = ((main_keepers_copy['minutes'] - main_keepers_copy['expected_minutes']) ** 2).sum()
             
             return mse_penalty
 
@@ -128,7 +115,6 @@ def adjust_minutes(players_df):
             main_players['expected_minutes'] = result_players.x[:len(main_players)]
             reserve_players['expected_minutes'] = result_players.x[len(main_players):]
         else:
-            # If optimization fails, retain the initial expected minutes
             main_players['expected_minutes'] = main_players['initial_expected_minutes']
             reserve_players['expected_minutes'] = reserve_players['initial_expected_minutes']
 
@@ -143,11 +129,9 @@ def adjust_minutes(players_df):
             main_keepers['expected_minutes'] = result_keepers.x[:len(main_keepers)]
             reserve_keepers['expected_minutes'] = result_keepers.x[len(main_keepers):]
         else:
-            # If optimization fails, retain the initial expected minutes
             main_keepers['expected_minutes'] = main_keepers['initial_expected_minutes']
             reserve_keepers['expected_minutes'] = reserve_keepers['initial_expected_minutes']
 
-        # Combine results
         adjusted_team_players = pd.concat([main_keepers, reserve_keepers, main_players, reserve_players])
         adjusted_players.append(adjusted_team_players)
 
@@ -156,9 +140,8 @@ def adjust_minutes(players_df):
 def format_player_data(player):
     return (f'{{"id": {player["id"]}, "web_name": "{player["web_name"]}", "team": {player["team"]}, '
             f'"position": {player["position"]}, "cost": {player["cost"]}, "minutes": {player["minutes"]}, '
-            f'"saves_per_90": {player["saves_per_90"]}, "starts": {player["starts"]}, '
-            f'"xG90": {player["xG90"]}, "xA90": {player["xA90"]}, "xGC90": {player["xGC90"]}, '
-            f'"avg_min": {player["avg_min"]}, "csP": {player["csP"]}, "xcg23": {player["xcg23"]}, '
+            f'"saves_per_90": {player["saves_per_90"]}, "xG90": {player["xG90"]}, "xA90": {player["xA90"]}, '
+            f'"xGC90": {player["xGC90"]}, "csP": {player["csP"]}, "xcg23": {player["xcg23"]}, '
             f'"xcg45": {player["xcg45"]}, "3shots": {player["3shots"]}, "6shots": {player["6shots"]}, '
             f'"expected_minutes": {player["expected_minutes"]:.2f}}},')
 

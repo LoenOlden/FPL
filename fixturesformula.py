@@ -40,23 +40,30 @@ team_names_to_abbr = {
     'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nott\'m Forest': 'NFO',
     'Southampton': 'SOU', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL'
 }
-
-""" team_coefficient = {
-    'ARS': 0.65, 'AVL': 0.96, 'BOU': 0.99, 'BRE': 1.00, 'BHA': 0.98, 'CHE': 0.83,
-    'CRY': 1.05, 'EVE': 1.00, 'FUL': 1.18, 'IPS': 1.48, 'LEI': 1.48, 'LIV': 0.69,
-    'MCI': 0.64, 'MUN': 1.20, 'NEW': 0.81, 'NFO': 1.06, 'SOU': 1.48, 'TOT': 0.93,
-    'WHU': 1.29, 'WOL': 1.34
-} """
-
+"""
 team_coefficient = {
-    'ARS': 0.825, 'AVL': 0.980, 'BOU': 0.995, 'BRE': 1.000, 'BHA': 0.990, 'CHE': 0.915,
-    'CRY': 1.025, 'EVE': 1.000, 'FUL': 1.090, 'IPS': 1.240, 'LEI': 1.240, 'LIV': 0.845,
-    'MCI': 0.820, 'MUN': 1.100, 'NEW': 0.905, 'NFO': 1.030, 'SOU': 1.240, 'TOT': 0.965,
-    'WHU': 1.145, 'WOL': 1.170
+    'ARS': 0.65, 'AVL': 0.96, 'BOU': 0.99, 'BRE': 1.00, 'BHA': 0.98, 'CHE': 0.83,
+    'CRY': 1.05, 'EVE': 1.00, 'FUL': 1.18, 'IPS': 1.6, 'LEI': 1.48, 'LIV': 0.69,
+    'MCI': 0.64, 'MUN': 1.2, 'NEW': 0.81, 'NFO': 1.06, 'SOU': 1.46, 'TOT': 0.93,
+    'WHU': 1.29, 'WOL': 1.34
 }
 
-home_coefficient = 1.0685
-away_coefficient = 0.9315
+team_coefficient = {
+    'ARS': 0.74, 'AVL': 0.98, 'BOU': 1.26, 'BRE': 1.22, 'BHA': 1.10, 'CHE': 0.82,
+    'CRY': 1.02, 'EVE': 1.18, 'FUL': 1.14, 'IPS': 1.46, 'LEI': 1.38, 'LIV': 0.78,
+    'MCI': 0.70, 'MUN': 0.90, 'NEW': 0.86, 'NFO': 1.34, 'SOU': 1.42, 'TOT': 0.94,
+    'WHU': 1.06, 'WOL': 1.30
+}
+"""
+team_coefficient = {
+    'ARS': 0.695, 'AVL': 0.970, 'BOU': 1.125, 'BRE': 1.110, 'BHA': 1.04, 'CHE': 0.825,
+    'CRY': 1.035, 'EVE': 1.090, 'FUL': 1.160, 'IPS': 1.530, 'LEI': 1.430, 'LIV': 0.735,
+    'MCI': 0.670, 'MUN': 1.050, 'NEW': 0.835, 'NFO': 1.200, 'SOU': 1.440, 'TOT': 0.935,
+    'WHU': 1.175, 'WOL': 1.320
+}
+
+home_coefficient = 1.147
+away_coefficient = 0.853
 
 def adjust_points(player, opponent_team, is_home):
     raw_points = player["xP"]
@@ -128,10 +135,10 @@ def format_player_data(player_data):
     return formatted_data
 
 # Calculate adjusted points for goalkeepers, defenders, midfielders, and forwards
-goalkeepers_points = calculate_adjusted_points(goalkeepers_sorted, fixtures_data, 1, 8)
-defenders_points = calculate_adjusted_points(defenders_sorted, fixtures_data, 1, 8)
-midfielders_points = calculate_adjusted_points(midfielders_sorted, fixtures_data, 1, 8)
-forwards_points = calculate_adjusted_points(forwards_sorted, fixtures_data, 1, 8)
+goalkeepers_points = calculate_adjusted_points(goalkeepers_sorted, fixtures_data, 1, 12)
+defenders_points = calculate_adjusted_points(defenders_sorted, fixtures_data, 1, 12)
+midfielders_points = calculate_adjusted_points(midfielders_sorted, fixtures_data, 1, 12)
+forwards_points = calculate_adjusted_points(forwards_sorted, fixtures_data, 1, 12)
 
 # Combine all player data
 combined_player_data = {**goalkeepers_points, **defenders_points, **midfielders_points, **forwards_points}
