@@ -94,7 +94,6 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
         else:
             prob += x_selected[i][start_week] == 0, f"Not_initial_player_{i}_GW{start_week}"
 
-    # Transfers allowed starting from Gameweek 2
     for week in range(start_week + 1, start_week + num_weeks):
         prob += pulp.lpSum(x_transfer_in[i][week] for i in players.index) <= 2, f"Max_transfers_in_week_{week}"
         prob += pulp.lpSum(x_transfer_out[i][week] for i in players.index) <= 2, f"Max_transfers_out_week_{week}"

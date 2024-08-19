@@ -5,14 +5,14 @@ from final_player_data import player_gameweek_data
 # Set the budget and other values
 budget = 100.0 
 bench_budget = 18.0
-HIT_VALUE = 4.0
+HIT_VALUE = 3.5
 decay_rate = 0.97
 num_weeks = 6
 start_week = 2
 
 start_week -= 1
 num_weeks += 1
-banned_players = []
+banned_players = ["Saliba", "Wood"]
 # Set your main 15 players (could be retrieved from fpl api later on)
 initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Saka", "Mbeumo", "Eze", "Nkunku",
                    "Muniz", "Solanke", "Isak"]
@@ -94,7 +94,6 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
         else:
             prob += x_selected[i][start_week] == 0, f"Not_initial_player_{i}_GW{start_week}"
 
-    # Transfers allowed starting from Gameweek 2
     for week in range(start_week + 1, start_week + num_weeks):
         prob += pulp.lpSum(x_transfer_in[i][week] for i in players.index) <= 2, f"Max_transfers_in_week_{week}"
         prob += pulp.lpSum(x_transfer_out[i][week] for i in players.index) <= 2, f"Max_transfers_out_week_{week}"
