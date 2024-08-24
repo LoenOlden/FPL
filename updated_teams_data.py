@@ -95,6 +95,7 @@ teams_data = {
         {"id": 580, "web_name": 'Huijsen', "team": 3, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.202, "xcg23": 0.396, "xcg45": 0.073, "3shots": 0.527, "6shots": 0.115},
         {"id": 592, "web_name": 'J.Araujo', "team": 3, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.202, "xcg23": 0.396, "xcg45": 0.073, "3shots": 0.527, "6shots": 0.115},
         {"id": 599, "web_name": 'Dennis', "team": 3, "position": 1, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.202, "xcg23": 0.396, "xcg45": 0.073, "3shots": 0.527, "6shots": 0.115},
+        {"id": 617, "web_name": 'Evanilson', "team": 3, "position": 4, "cost": 6.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.38, "xA90": 0.12, "xGC90": 0.0, "csP": 0.202, "xcg23": 0.396, "xcg45": 0.073, "3shots": 0.527, "6shots": 0.115},
     ],
     4: [
         {"id": 86, "web_name": 'Ajer', "team": 4, "position": 2, "cost": 4.5, "minutes": 1826, "saves_per_90": 0.0, "starts": 21, "xG90": 0.06, "xA90": 0.13, "xGC90": 1.45, "csP": 0.2102, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.508, "6shots": 0.093},
@@ -167,6 +168,8 @@ teams_data = {
         {"id": 595, "web_name": 'Gruda', "team": 5, "position": 3, "cost": 5.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.232, "xcg23": 0.368, "xcg45": 0.057, "3shots": 0.46, "6shots": 0.06},
         {"id": 600, "web_name": 'Ayari', "team": 5, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.232, "xcg23": 0.368, "xcg45": 0.057, "3shots": 0.46, "6shots": 0.06},
         {"id": 601, "web_name": 'Moran', "team": 5, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.232, "xcg23": 0.368, "xcg45": 0.057, "3shots": 0.46, "6shots": 0.06},
+        {"id": 615, "web_name": 'Rushworth', "team": 5, "position": 1, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.232, "xcg23": 0.368, "xcg45": 0.057, "3shots": 0.46, "6shots": 0.06},
+        {"id": 618, "web_name": 'Georginio', "team": 5, "position": 3, "cost": 5.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.232, "xcg23": 0.368, "xcg45": 0.057, "3shots": 0.46, "6shots": 0.06},
     ],
     6: [
         {"id": 150, "web_name": 'Andrey Santos', "team": 6, "position": 3, "cost": 4.5, "minutes": 7, "saves_per_90": 0.0, "starts": 0, "xG90": 0.77, "xA90": 0.0, "xGC90": 0.26, "csP": 0.2101, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.523, "6shots": 0.109},
@@ -212,6 +215,7 @@ teams_data = {
         {"id": 560, "web_name": 'Neto', "team": 6, "position": 3, "cost": 6.5, "minutes": 1516, "saves_per_90": 0.0, "starts": 18, "xG90": 0.19, "xA90": 0.22, "xGC90": 1.73, "csP": 0.2101, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.523, "6shots": 0.109},
         {"id": 575, "web_name": 'Wiley', "team": 6, "position": 2, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.2101, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.523, "6shots": 0.109},
         {"id": 581, "web_name": 'Jørgensen', "team": 6, "position": 1, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.2101, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.523, "6shots": 0.109},
+        {"id": 621, "web_name": 'João Félix', "team": 6, "position": 3, "cost": 6.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.42, "xA90": 0.16, "xGC90": 0.0, "csP": 0.2101, "xcg23": 0.389, "xcg45": 0.068, "3shots": 0.523, "6shots": 0.109},
     ],
     7: [
         {"id": 190, "web_name": 'Ahamada', "team": 7, "position": 3, "cost": 4.5, "minutes": 332, "saves_per_90": 0.0, "starts": 0, "xG90": 0.11, "xA90": 0.03, "xGC90": 2.42, "csP": 0.239, "xcg23": 0.361, "xcg45": 0.054, "3shots": 0.429, "6shots": 0.046},
@@ -268,6 +272,8 @@ teams_data = {
         {"id": 577, "web_name": 'Lindstrøm', "team": 8, "position": 3, "cost": 5.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.223, "xcg23": 0.377, "xcg45": 0.061, "3shots": 0.502, "6shots": 0.088},
         {"id": 582, "web_name": "O'Brien", "team": 8, "position": 2, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.223, "xcg23": 0.377, "xcg45": 0.061, "3shots": 0.502, "6shots": 0.088},
         {"id": 603, "web_name": 'Armstrong', "team": 8, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.223, "xcg23": 0.377, "xcg45": 0.061, "3shots": 0.502, "6shots": 0.088},
+        {"id": 614, "web_name": 'Metcalfe', "team": 8, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.223, "xcg23": 0.377, "xcg45": 0.061, "3shots": 0.502, "6shots": 0.088},
+        {"id": 624, "web_name": 'Begovic', "team": 8, "position": 1, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.223, "xcg23": 0.377, "xcg45": 0.061, "3shots": 0.502, "6shots": 0.088},
     ],
     9: [
         {"id": 19, "web_name": 'Smith Rowe', "team": 9, "position": 3, "cost": 5.5, "minutes": 343, "saves_per_90": 0.0, "starts": 3, "xG90": 0.49, "xA90": 0.1, "xGC90": 0.55, "csP": 0.19, "xcg23": 0.407, "xcg45": 0.08, "3shots": 0.537, "6shots": 0.133},
@@ -296,6 +302,7 @@ teams_data = {
         {"id": 586, "web_name": 'J.Cuenca', "team": 9, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.19, "xcg23": 0.407, "xcg45": 0.08, "3shots": 0.537, "6shots": 0.133},
         {"id": 604, "web_name": 'King', "team": 9, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.19, "xcg23": 0.407, "xcg45": 0.08, "3shots": 0.537, "6shots": 0.133},
         {"id": 605, "web_name": 'Godo', "team": 9, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.19, "xcg23": 0.407, "xcg45": 0.08, "3shots": 0.537, "6shots": 0.133},
+        {"id": 622, "web_name": 'Berge', "team": 9, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.19, "xcg23": 0.407, "xcg45": 0.08, "3shots": 0.537, "6shots": 0.133},
     ],
     10: [
         {"id": 260, "web_name": 'Al-Hamadi', "team": 10, "position": 4, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
@@ -325,6 +332,8 @@ teams_data = {
         {"id": 284, "web_name": 'Woolfenden', "team": 10, "position": 2, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 568, "web_name": 'Muric', "team": 10, "position": 1, "cost": 4.5, "minutes": 900, "saves_per_90": 6.4, "starts": 10, "xG90": 0.0, "xA90": 0.0, "xGC90": 2.04, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 583, "web_name": 'Townsend', "team": 10, "position": 2, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
+        {"id": 611, "web_name": 'Szmodics', "team": 10, "position": 3, "cost": 6.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
+        {"id": 619, "web_name": 'Cajuste', "team": 10, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
     ],
     11: [
         {"id": 117, "web_name": 'Buonanotte', "team": 11, "position": 3, "cost": 5.0, "minutes": 1356, "saves_per_90": 0.0, "starts": 17, "xG90": 0.16, "xA90": 0.08, "xGC90": 1.4, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
@@ -355,6 +364,7 @@ teams_data = {
         {"id": 309, "web_name": 'Winks', "team": 11, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 570, "web_name": 'A.Fatawu', "team": 11, "position": 3, "cost": 5.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 606, "web_name": 'Alves', "team": 11, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
+        {"id": 616, "web_name": 'Nelson', "team": 11, "position": 2, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
     ],
     12: [
         {"id": 310, "web_name": 'A.Becker', "team": 12, "position": 1, "cost": 5.5, "minutes": 2520, "saves_per_90": 2.96, "starts": 28, "xG90": 0.0, "xA90": 0.0, "xGC90": 1.26, "csP": 0.292, "xcg23": 0.312, "xcg45": 0.035, "3shots": 0.472, "6shots": 0.066},
@@ -414,6 +424,7 @@ teams_data = {
         {"id": 363, "web_name": 'Walker', "team": 13, "position": 2, "cost": 5.5, "minutes": 2766, "saves_per_90": 0.0, "starts": 30, "xG90": 0.01, "xA90": 0.1, "xGC90": 0.93, "csP": 0.387, "xcg23": 0.23, "xcg45": 0.016, "3shots": 0.307, "6shots": 0.016},
         {"id": 571, "web_name": 'Sávio', "team": 13, "position": 3, "cost": 6.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.387, "xcg23": 0.23, "xcg45": 0.016, "3shots": 0.307, "6shots": 0.016},
         {"id": 607, "web_name": 'O’Reilly', "team": 13, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.387, "xcg23": 0.23, "xcg45": 0.016, "3shots": 0.307, "6shots": 0.016},
+        {"id": 625, "web_name": 'Gündogan', "team": 13, "position": 3, "cost": 6.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.35, "xA90": 0.21, "xGC90": 0.92, "csP": 0.387, "xcg23": 0.23, "xcg45": 0.016, "3shots": 0.307, "6shots": 0.016},
     ],
     14: [
         {"id": 364, "web_name": 'Amad', "team": 14, "position": 3, "cost": 5.0, "minutes": 385, "saves_per_90": 0.0, "starts": 3, "xG90": 0.12, "xA90": 0.11, "xGC90": 1.79, "csP": 0.159, "xcg23": 0.434, "xcg45": 0.104, "3shots": 0.547, "6shots": 0.174},
@@ -444,6 +455,7 @@ teams_data = {
         {"id": 572, "web_name": 'Yoro', "team": 14, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.159, "xcg23": 0.434, "xcg45": 0.104, "3shots": 0.547, "6shots": 0.174},
         {"id": 593, "web_name": 'De Ligt', "team": 14, "position": 2, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.159, "xcg23": 0.434, "xcg45": 0.104, "3shots": 0.547, "6shots": 0.174},
         {"id": 594, "web_name": 'Mazraoui', "team": 14, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.159, "xcg23": 0.434, "xcg45": 0.104, "3shots": 0.547, "6shots": 0.174},
+        {"id": 613, "web_name": 'Collyer', "team": 14, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.159, "xcg23": 0.434, "xcg45": 0.104, "3shots": 0.547, "6shots": 0.174},
     ],
     15: [
         {"id": 390, "web_name": 'A.Murphy', "team": 15, "position": 2, "cost": 4.0, "minutes": 11, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.65, "csP": 0.204, "xcg23": 0.394, "xcg45": 0.072, "3shots": 0.537, "6shots": 0.133},
@@ -512,6 +524,7 @@ teams_data = {
         {"id": 449, "web_name": 'Yates', "team": 16, "position": 3, "cost": 5.0, "minutes": 1979, "saves_per_90": 0.0, "starts": 21, "xG90": 0.13, "xA90": 0.03, "xGC90": 1.45, "csP": 0.23, "xcg23": 0.37, "xcg45": 0.058, "3shots": 0.429, "6shots": 0.046},
         {"id": 573, "web_name": 'Milenković', "team": 16, "position": 2, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.23, "xcg23": 0.37, "xcg45": 0.058, "3shots": 0.429, "6shots": 0.046},
         {"id": 596, "web_name": 'Jota Silva', "team": 16, "position": 3, "cost": 6.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.23, "xcg23": 0.37, "xcg45": 0.058, "3shots": 0.429, "6shots": 0.046},
+        {"id": 620, "web_name": 'Sosa', "team": 16, "position": 3, "cost": 5.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.23, "xcg23": 0.37, "xcg45": 0.058, "3shots": 0.429, "6shots": 0.046},
     ],
     17: [
         {"id": 450, "web_name": 'Alcaraz', "team": 17, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
@@ -545,6 +558,7 @@ teams_data = {
         {"id": 518, "web_name": 'Downes', "team": 17, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 584, "web_name": 'Brereton Díaz', "team": 17, "position": 3, "cost": 5.5, "minutes": 1105, "saves_per_90": 0.0, "starts": 14, "xG90": 0.45, "xA90": 0.09, "xGC90": 1.95, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
         {"id": 608, "web_name": 'Dibling', "team": 17, "position": 3, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
+        {"id": 623, "web_name": 'M.Fernandes', "team": 17, "position": 3, "cost": 5.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},
     ],
     18: [
         {"id": 82, "web_name": 'Solanke', "team": 18, "position": 4, "cost": 7.5, "minutes": 3325, "saves_per_90": 0.0, "starts": 37, "xG90": 0.53, "xA90": 0.06, "xGC90": 1.53, "csP": 0.2, "xcg23": 0.398, "xcg45": 0.074, "3shots": 0.475, "6shots": 0.068},
@@ -583,6 +597,7 @@ teams_data = {
         {"id": 510, "web_name": 'Whiteman', "team": 18, "position": 1, "cost": 4.0, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.2, "xcg23": 0.398, "xcg45": 0.074, "3shots": 0.475, "6shots": 0.068},
         {"id": 609, "web_name": 'Lankshear', "team": 18, "position": 4, "cost": 4.5, "minutes": 0, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 0.0, "csP": 0.2, "xcg23": 0.398, "xcg45": 0.074, "3shots": 0.475, "6shots": 0.068},
         {"id": 610, "web_name": 'Moore', "team": 18, "position": 3, "cost": 4.5, "minutes": 3, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 1.5, "csP": 0.2, "xcg23": 0.398, "xcg45": 0.074, "3shots": 0.475, "6shots": 0.068},
+        {"id": 612, "web_name": 'Odobert', "team": 18, "position": 3, "cost": 5.5, "minutes": 3, "saves_per_90": 0.0, "starts": 0, "xG90": 0.0, "xA90": 0.0, "xGC90": 1.5, "csP": 0.2, "xcg23": 0.398, "xcg45": 0.074, "3shots": 0.475, "6shots": 0.068},
     ],
     19: [
         {"id": 388, "web_name": 'Wan-Bissaka', "team": 19, "position": 2, "cost": 4.5, "minutes": 1778, "saves_per_90": 0.0, "starts": 20, "xG90": 0.01, "xA90": 0.07, "xGC90": 1.95, "csP": 0.147, "xcg23": 0.443, "xcg45": 0.115, "3shots": 0.532, "6shots": 0.25},

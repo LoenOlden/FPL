@@ -19,7 +19,7 @@ def get_players():
     data = fetch_fpl_data()
     return data.get('elements', [])
 
-def save_player_data_to_csv(players, file_path='players_data.csv'):
+def save_player_data_to_csv(players, file_path='players_data2.csv'):
     # Define all possible fields you want to include
     fieldnames = [
         'id', 'first_name', 'second_name', 'web_name', 'team', 'position', 'cost', 'total_points',

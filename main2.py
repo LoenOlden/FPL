@@ -3,16 +3,17 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Set the budget and other values
-budget = 100.0 
+budget = 100.0
 bench_budget = 18.0
-HIT_VALUE = 2.5
-decay_rate = 0.97
+HIT_VALUE = 3.4
+decay_rate = 0.95
 num_weeks = 6
 start_week = 2
 
 start_week -= 1
 num_weeks += 1
 banned_players = []
+locked_players = ["Flekken", "Henderson", "Faes"]
 # Set your main 15 players (could be retrieved from fpl api later on)
 initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Saka", "Mbeumo", "Eze", "Nkunku",
                    "Muniz", "Solanke", "Isak"]
@@ -49,6 +50,13 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
     x_transfer_in = pulp.LpVariable.dicts("x_transfer_in", (players.index, range(start_week, start_week + num_weeks)), cat='Binary')
     x_transfer_out = pulp.LpVariable.dicts("x_transfer_out", (players.index, range(start_week, start_week + num_weeks)), cat='Binary')
     x_captain = pulp.LpVariable.dicts("x_captain", (players.index, range(start_week, start_week + num_weeks)), cat='Binary')
+    
+    # Ensure locked-in players are selected every week
+    for week in range(start_week, start_week + num_weeks):
+        for player_name in locked_players:
+            player_index = players[players['name'] == player_name].index
+            if not player_index.empty:
+                prob += x_selected[player_index[0]][week] == 1, f"Locked_in_player_{player_name}_week_{week}"
 
     # Constraints for each week
     for week in range(start_week, start_week + num_weeks):
@@ -115,7 +123,7 @@ def optimize_team(players, budget, bench_budget, initial_players, start_week, nu
     gameweeks = [col for col in players.columns if col.startswith('GW')][start_week-1:start_week+num_weeks-1]
 
     # Apply decay factors for the relevant weeks
-    decay_factors = {gw: decay_rate ** i for i, gw in enumerate(gameweeks)}
+    decay_factors = {gw: decay_rate ** (i+1) for i, gw in enumerate(gameweeks[2:])}
     apply_decay_factors(players, decay_factors)
 
     # Create optimization problem
