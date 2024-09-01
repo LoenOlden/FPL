@@ -4,19 +4,20 @@ from final_player_data import player_gameweek_data
 
 # Set the budget and other values
 budget = 100.0
-bench_budget = 18.0
-HIT_VALUE = 3.4
-decay_rate = 0.95
+bench_budget = 17.0
+HIT_VALUE = 3.0
+decay_rate = 0.97
 num_weeks = 6
-start_week = 2
+start_week = 4
+max_transfers = 2
 
 start_week -= 1
 num_weeks += 1
-banned_players = []
+banned_players = ["Enzo", "Bailey", "Gvardiol"]
 locked_players = ["Flekken", "Henderson", "Faes"]
 # Set your main 15 players (could be retrieved from fpl api later on)
-initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Saka", "Mbeumo", "Eze", "Nkunku",
-                   "Muniz", "Solanke", "Isak"]
+initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Saka", "Mbeumo", "Eze", "Rogers",
+                   "Muniz", "João Pedro", "Isak"]
 
 def load_player_data():
     # Convert player_gameweek_data to DataFrame
@@ -103,8 +104,8 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
             prob += x_selected[i][start_week] == 0, f"Not_initial_player_{i}_GW{start_week}"
 
     for week in range(start_week + 1, start_week + num_weeks):
-        prob += pulp.lpSum(x_transfer_in[i][week] for i in players.index) <= 2, f"Max_transfers_in_week_{week}"
-        prob += pulp.lpSum(x_transfer_out[i][week] for i in players.index) <= 2, f"Max_transfers_out_week_{week}"
+        prob += pulp.lpSum(x_transfer_in[i][week] for i in players.index) <= max_transfers, f"Max_transfers_in_week_{week}"
+        prob += pulp.lpSum(x_transfer_out[i][week] for i in players.index) <= max_transfers, f"Max_transfers_out_week_{week}"
 
         for i in players.index:
             prob += x_selected[i][week] == x_selected[i][week-1] + x_transfer_in[i][week] - x_transfer_out[i][week], f"Transfer_balance_{i}_week_{week}"
