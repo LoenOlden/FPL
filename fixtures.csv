@@ -189,3 +189,193 @@ GW19,Leicester,Man City,2024-12-29 15:00:00
 GW19,Man Utd,Newcastle,2024-12-29 15:00:00
 GW19,Spurs,Wolves,2024-12-29 15:00:00
 GW19,West Ham,Liverpool,2024-12-29 15:00:00
+GW20,Aston Villa,Leicester,2025-01-04 15:00:00
+GW20,Bournemouth,Everton,2025-01-04 15:00:00
+GW20,Brighton,Arsenal,2025-01-04 15:00:00
+GW20,Crystal Palace,Chelsea,2025-01-04 15:00:00
+GW20,Fulham,Ipswich,2025-01-04 15:00:00
+GW20,Liverpool,Man Utd,2025-01-04 15:00:00
+GW20,Man City,West Ham,2025-01-04 15:00:00
+GW20,Southampton,Brentford,2025-01-04 15:00:00
+GW20,Spurs,Newcastle,2025-01-04 15:00:00
+GW20,Wolves,Nott'm Forest,2025-01-04 15:00:00
+GW21,Arsenal,Spurs,2025-01-14 19:45:00
+GW21,Brentford,Man City,2025-01-14 19:45:00
+GW21,Everton,Aston Villa,2025-01-14 19:45:00
+GW21,Ipswich,Brighton,2025-01-14 19:45:00
+GW21,Leicester,Crystal Palace,2025-01-14 19:45:00
+GW21,Nott'm Forest,Liverpool,2025-01-14 19:45:00
+GW21,West Ham,Fulham,2025-01-14 19:45:00
+GW21,Chelsea,Bournemouth,2025-01-15 19:45:00
+GW21,Newcastle,Wolves,2025-01-15 19:45:00
+GW21,Man Utd,Southampton,2025-01-15 20:00:00
+GW22,Arsenal,Aston Villa,2025-01-18 15:00:00
+GW22,Brentford,Liverpool,2025-01-18 15:00:00
+GW22,Chelsea,Wolves,2025-01-18 15:00:00
+GW22,Everton,Spurs,2025-01-18 15:00:00
+GW22,Ipswich,Man City,2025-01-18 15:00:00
+GW22,Leicester,Fulham,2025-01-18 15:00:00
+GW22,Man Utd,Brighton,2025-01-18 15:00:00
+GW22,Newcastle,Bournemouth,2025-01-18 15:00:00
+GW22,Nott'm Forest,Southampton,2025-01-18 15:00:00
+GW22,West Ham,Crystal Palace,2025-01-18 15:00:00
+GW23,Aston Villa,West Ham,2025-01-25 15:00:00
+GW23,Bournemouth,Nott'm Forest,2025-01-25 15:00:00
+GW23,Brighton,Everton,2025-01-25 15:00:00
+GW23,Crystal Palace,Brentford,2025-01-25 15:00:00
+GW23,Fulham,Man Utd,2025-01-25 15:00:00
+GW23,Liverpool,Ipswich,2025-01-25 15:00:00
+GW23,Man City,Chelsea,2025-01-25 15:00:00
+GW23,Southampton,Newcastle,2025-01-25 15:00:00
+GW23,Spurs,Leicester,2025-01-25 15:00:00
+GW23,Wolves,Arsenal,2025-01-25 15:00:00
+GW24,Arsenal,Man City,2025-02-01 15:00:00
+GW24,Bournemouth,Liverpool,2025-02-01 15:00:00
+GW24,Brentford,Spurs,2025-02-01 15:00:00
+GW24,Chelsea,West Ham,2025-02-01 15:00:00
+GW24,Everton,Leicester,2025-02-01 15:00:00
+GW24,Ipswich,Southampton,2025-02-01 15:00:00
+GW24,Man Utd,Crystal Palace,2025-02-01 15:00:00
+GW24,Newcastle,Fulham,2025-02-01 15:00:00
+GW24,Nott'm Forest,Brighton,2025-02-01 15:00:00
+GW24,Wolves,Aston Villa,2025-02-01 15:00:00
+GW25,Aston Villa,Ipswich,2025-02-15 15:00:00
+GW25,Brighton,Chelsea,2025-02-15 15:00:00
+GW25,Crystal Palace,Everton,2025-02-15 15:00:00
+GW25,Fulham,Nott'm Forest,2025-02-15 15:00:00
+GW25,Leicester,Arsenal,2025-02-15 15:00:00
+GW25,Liverpool,Wolves,2025-02-15 15:00:00
+GW25,Man City,Newcastle,2025-02-15 15:00:00
+GW25,Southampton,Bournemouth,2025-02-15 15:00:00
+GW25,Spurs,Man Utd,2025-02-15 15:00:00
+GW25,West Ham,Brentford,2025-02-15 15:00:00
+GW26,Arsenal,West Ham,2025-02-22 15:00:00
+GW26,Aston Villa,Chelsea,2025-02-22 15:00:00
+GW26,Bournemouth,Wolves,2025-02-22 15:00:00
+GW26,Everton,Man Utd,2025-02-22 15:00:00
+GW26,Fulham,Crystal Palace,2025-02-22 15:00:00
+GW26,Ipswich,Spurs,2025-02-22 15:00:00
+GW26,Leicester,Brentford,2025-02-22 15:00:00
+GW26,Man City,Liverpool,2025-02-22 15:00:00
+GW26,Newcastle,Nott'm Forest,2025-02-22 15:00:00
+GW26,Southampton,Brighton,2025-02-22 15:00:00
+GW27,Brentford,Everton,2025-02-25 19:45:00
+GW27,Brighton,Bournemouth,2025-02-25 19:45:00
+GW27,Nott'm Forest,Arsenal,2025-02-25 19:45:00
+GW27,Spurs,Man City,2025-02-25 19:45:00
+GW27,West Ham,Leicester,2025-02-25 19:45:00
+GW27,Wolves,Fulham,2025-02-25 19:45:00
+GW27,Crystal Palace,Aston Villa,2025-02-25 20:00:00
+GW27,Chelsea,Southampton,2025-02-26 19:45:00
+GW27,Liverpool,Newcastle,2025-02-26 20:00:00
+GW27,Man Utd,Ipswich,2025-02-26 20:00:00
+GW28,Brentford,Aston Villa,2025-03-08 15:00:00
+GW28,Brighton,Fulham,2025-03-08 15:00:00
+GW28,Chelsea,Leicester,2025-03-08 15:00:00
+GW28,Crystal Palace,Ipswich,2025-03-08 15:00:00
+GW28,Liverpool,Southampton,2025-03-08 15:00:00
+GW28,Man Utd,Arsenal,2025-03-08 15:00:00
+GW28,Nott'm Forest,Man City,2025-03-08 15:00:00
+GW28,Spurs,Bournemouth,2025-03-08 15:00:00
+GW28,West Ham,Newcastle,2025-03-08 15:00:00
+GW28,Wolves,Everton,2025-03-08 15:00:00
+GW29,Arsenal,Chelsea,2025-03-15 15:00:00
+GW29,Aston Villa,Liverpool,2025-03-15 15:00:00
+GW29,Bournemouth,Brentford,2025-03-15 15:00:00
+GW29,Everton,West Ham,2025-03-15 15:00:00
+GW29,Fulham,Spurs,2025-03-15 15:00:00
+GW29,Ipswich,Nott'm Forest,2025-03-15 15:00:00
+GW29,Leicester,Man Utd,2025-03-15 15:00:00
+GW29,Man City,Brighton,2025-03-15 15:00:00
+GW29,Newcastle,Crystal Palace,2025-03-15 15:00:00
+GW29,Southampton,Wolves,2025-03-15 15:00:00
+GW30,Arsenal,Fulham,2025-04-01 18:45:00
+GW30,Bournemouth,Ipswich,2025-04-01 18:45:00
+GW30,Brighton,Aston Villa,2025-04-01 18:45:00
+GW30,Nott'm Forest,Man Utd,2025-04-01 18:45:00
+GW30,Wolves,West Ham,2025-04-01 18:45:00
+GW30,Chelsea,Spurs,2025-04-02 18:45:00
+GW30,Man City,Leicester,2025-04-02 18:45:00
+GW30,Newcastle,Brentford,2025-04-02 18:45:00
+GW30,Southampton,Crystal Palace,2025-04-02 18:45:00
+GW30,Liverpool,Everton,2025-04-02 19:00:00
+GW31,Aston Villa,Nott'm Forest,2025-04-05 14:00:00
+GW31,Brentford,Chelsea,2025-04-05 14:00:00
+GW31,Crystal Palace,Brighton,2025-04-05 14:00:00
+GW31,Everton,Arsenal,2025-04-05 14:00:00
+GW31,Fulham,Liverpool,2025-04-05 14:00:00
+GW31,Ipswich,Wolves,2025-04-05 14:00:00
+GW31,Leicester,Newcastle,2025-04-05 14:00:00
+GW31,Man Utd,Man City,2025-04-05 14:00:00
+GW31,Spurs,Southampton,2025-04-05 14:00:00
+GW31,West Ham,Bournemouth,2025-04-05 14:00:00
+GW32,Arsenal,Brentford,2025-04-12 14:00:00
+GW32,Bournemouth,Fulham,2025-04-12 14:00:00
+GW32,Brighton,Leicester,2025-04-12 14:00:00
+GW32,Chelsea,Ipswich,2025-04-12 14:00:00
+GW32,Liverpool,West Ham,2025-04-12 14:00:00
+GW32,Man City,Crystal Palace,2025-04-12 14:00:00
+GW32,Newcastle,Man Utd,2025-04-12 14:00:00
+GW32,Nott'm Forest,Everton,2025-04-12 14:00:00
+GW32,Southampton,Aston Villa,2025-04-12 14:00:00
+GW32,Wolves,Spurs,2025-04-12 14:00:00
+GW33,Aston Villa,Newcastle,2025-04-19 14:00:00
+GW33,Brentford,Brighton,2025-04-19 14:00:00
+GW33,Crystal Palace,Bournemouth,2025-04-19 14:00:00
+GW33,Everton,Man City,2025-04-19 14:00:00
+GW33,Fulham,Chelsea,2025-04-19 14:00:00
+GW33,Ipswich,Arsenal,2025-04-19 14:00:00
+GW33,Leicester,Liverpool,2025-04-19 14:00:00
+GW33,Man Utd,Wolves,2025-04-19 14:00:00
+GW33,Spurs,Nott'm Forest,2025-04-19 14:00:00
+GW33,West Ham,Southampton,2025-04-19 14:00:00
+GW34,Arsenal,Crystal Palace,2025-04-26 14:00:00
+GW34,Bournemouth,Man Utd,2025-04-26 14:00:00
+GW34,Brighton,West Ham,2025-04-26 14:00:00
+GW34,Chelsea,Everton,2025-04-26 14:00:00
+GW34,Liverpool,Spurs,2025-04-26 14:00:00
+GW34,Man City,Aston Villa,2025-04-26 14:00:00
+GW34,Newcastle,Ipswich,2025-04-26 14:00:00
+GW34,Nott'm Forest,Brentford,2025-04-26 14:00:00
+GW34,Southampton,Fulham,2025-04-26 14:00:00
+GW34,Wolves,Leicester,2025-04-26 14:00:00
+GW35,Arsenal,Bournemouth,2025-05-03 14:00:00
+GW35,Aston Villa,Fulham,2025-05-03 14:00:00
+GW35,Brentford,Man Utd,2025-05-03 14:00:00
+GW35,Brighton,Newcastle,2025-05-03 14:00:00
+GW35,Chelsea,Liverpool,2025-05-03 14:00:00
+GW35,Crystal Palace,Nott'm Forest,2025-05-03 14:00:00
+GW35,Everton,Ipswich,2025-05-03 14:00:00
+GW35,Leicester,Southampton,2025-05-03 14:00:00
+GW35,Man City,Wolves,2025-05-03 14:00:00
+GW35,West Ham,Spurs,2025-05-03 14:00:00
+GW36,Bournemouth,Aston Villa,2025-05-10 14:00:00
+GW36,Fulham,Everton,2025-05-10 14:00:00
+GW36,Ipswich,Brentford,2025-05-10 14:00:00
+GW36,Liverpool,Arsenal,2025-05-10 14:00:00
+GW36,Man Utd,West Ham,2025-05-10 14:00:00
+GW36,Newcastle,Chelsea,2025-05-10 14:00:00
+GW36,Nott'm Forest,Leicester,2025-05-10 14:00:00
+GW36,Southampton,Man City,2025-05-10 14:00:00
+GW36,Spurs,Crystal Palace,2025-05-10 14:00:00
+GW36,Wolves,Brighton,2025-05-10 14:00:00
+GW37,Arsenal,Newcastle,2025-05-18 14:00:00
+GW37,Aston Villa,Spurs,2025-05-18 14:00:00
+GW37,Brentford,Fulham,2025-05-18 14:00:00
+GW37,Brighton,Liverpool,2025-05-18 14:00:00
+GW37,Chelsea,Man Utd,2025-05-18 14:00:00
+GW37,Crystal Palace,Wolves,2025-05-18 14:00:00
+GW37,Everton,Southampton,2025-05-18 14:00:00
+GW37,Leicester,Ipswich,2025-05-18 14:00:00
+GW37,Man City,Bournemouth,2025-05-18 14:00:00
+GW37,West Ham,Nott'm Forest,2025-05-18 14:00:00
+GW38,Bournemouth,Leicester,2025-05-25 15:00:00
+GW38,Fulham,Man City,2025-05-25 15:00:00
+GW38,Ipswich,West Ham,2025-05-25 15:00:00
+GW38,Liverpool,Crystal Palace,2025-05-25 15:00:00
+GW38,Man Utd,Aston Villa,2025-05-25 15:00:00
+GW38,Newcastle,Everton,2025-05-25 15:00:00
+GW38,Nott'm Forest,Chelsea,2025-05-25 15:00:00
+GW38,Southampton,Arsenal,2025-05-25 15:00:00
+GW38,Spurs,Brighton,2025-05-25 15:00:00
+GW38,Wolves,Brentford,2025-05-25 15:00:00

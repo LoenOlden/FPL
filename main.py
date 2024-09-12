@@ -11,13 +11,14 @@ num_weeks = 6
 start_week = 4
 max_transfers = 2
 
-start_week -= 1
-num_weeks += 1
-banned_players = ["Enzo", "Bailey", "Gvardiol"]
+banned_players = []
 locked_players = ["Flekken", "Henderson", "Faes"]
 # Set your main 15 players (could be retrieved from fpl api later on)
-initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Saka", "Mbeumo", "Eze", "Rogers",
+initial_players = ["Flekken", "Henderson", "Alexander-Arnold", "Gabriel", "Murillo", "Dunk", "Faes", "M.Salah", "Rogers", "Eze", "Mbeumo", "Saka",
                    "Muniz", "João Pedro", "Isak"]
+
+start_week -= 1
+num_weeks += 1
 
 def load_player_data():
     # Convert player_gameweek_data to DataFrame

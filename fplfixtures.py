@@ -6,8 +6,8 @@ def parse_fixtures(raw_data):
     fixtures = defaultdict(list)
     lines = raw_data.splitlines()
     
-    # Process only the first 190 lines
-    lines = lines[:190]
+    # Process only the first 380 lines
+    lines = lines[:380]
     
     # Divide the lines into groups of 10 for each gameweek
     for i, line in enumerate(lines):
