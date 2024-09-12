@@ -2,7 +2,7 @@ This is far from a commercial and advanced models, just a basic implementation o
 
 Preseason expected minutes was working great but everything changes so quickly with news and injuries so expectedminutes.py file is pretty much useless for now.
 
-My advice is not to run that file but accept updated_player_data.py file as a base and make the changes there as you wish. I manually update expected minutes looking at fplreview's minutes.
+My advice is not to run that file but accept updated_player_data.py file as a base and make the changes there as you wish. I manually update expected minutes looking at fplreview's minutes every week. I will try to update before every gameweek but i can't promise for all the season.
 
 You can update your minutes at updated_player_data.py, also can change xG and xA stats based on last couple of games or market odds. I almost totally used 23/24 premier league data by FPL API.
 
@@ -15,9 +15,7 @@ But be careful, if one of your players have less than 0.4 or 0.5 raw expected po
 After that you can run fixturesformula.py file to have fixture based projections and it will create final_player_data.py file, which is necessary to solve at main.py.
 
 There can be constraint problems at solver, because if a player rises 0.2, you can only sell 0.1 more, i didn't adapt this into the model so you should be careful at managing budget and you can
-manually set the players prices at updated_player_data.py file if there are problems because of that. Bench budget is not much important, you can set it to 16.0 if you want no effect at all.
-
-But if you want strong bench, then you can increase it to 18.5-20.5. Your choice. However you should check if you have already that pre-gameweek. Otherwise constraints can't be matched.
+manually set the players prices at updated_player_data.py file if there are problems because of that. Bench budget is not much important, you can set it to 16.0 if you want no effect at all. But if you want strong bench, then you can increase it to 18.5-20.5. Your choice. However you should check if you have already that pre-gameweek. Otherwise constraints can't be matched.
 
 For hit value i advice it to be around 3.0, it shouldn't be less than 2.0 and shouldn't be more than 4.0. Ideal should be between 2.5 and 3.5. If you want aggressive transfers and hits approach then
 can set it to 2.5. If you want no hits in general then 3.5 seems reasonable.
