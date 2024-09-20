@@ -3,15 +3,15 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 HIT_VALUE = 3.0
-budget = 100.0
+budget = 100.2
 bench_budget = 17.0
-num_weeks = 6
+num_weeks = 7
 decay_rate = 0.97
-start_week = 4
-max_transfers = 2
+start_week = 5
+max_transfers = 1
 
 banned_players = ["McGinn", "Raya", "Leno", "McCarthy"]
-locked_players = ["Flekken", "Henderson", "Faes"]
+locked_players = ["Faes"]
 
 def load_player_data():
     # Convert player_gameweek_data to DataFrame

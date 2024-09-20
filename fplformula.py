@@ -11,10 +11,10 @@ position_mapping = {
 
 def calculate_goalkeeper_value(player):
     try:
-        appearance_points = player["expected_minutes"] / 90
-        clean_sheet_points = player["csP"] * 4.2
-        save_3points = player["3shots"] * 1.05
-        save_6points = player["6shots"] * 1.05
+        appearance_points = player["expected_minutes"] / 95
+        clean_sheet_points = player["csP"] * 4.0
+        save_3points = player["3shots"] * 1.0
+        save_6points = player["6shots"] * 1.0
         save_points = save_3points + save_6points
         goal2CPen = -1 * (player["xcg23"])
         goal4CPen = -1 * (player["xcg45"])
@@ -25,10 +25,10 @@ def calculate_goalkeeper_value(player):
 
 def calculate_defender_value(player):
     try:
-        appearance_points = player["expected_minutes"] / 90
-        clean_sheet_points = player["csP"] * 4.2
-        goal_points = player["xG90"] * 6.3
-        assist_points = player["xA90"] * 3.15
+        appearance_points = player["expected_minutes"] / 95
+        clean_sheet_points = player["csP"] * 4.0
+        goal_points = player["xG90"] * 6.0
+        assist_points = player["xA90"] * 3.0
         goal2CPen = -1 * (player["xcg23"])
         goal4CPen = -1 * (player["xcg45"])
         return (clean_sheet_points + goal_points + assist_points + appearance_points + goal2CPen + goal4CPen + 1) * appearance_points
