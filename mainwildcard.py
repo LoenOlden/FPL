@@ -2,13 +2,13 @@ import pulp
 import pandas as pd
 from final_player_data import player_gameweek_data
 
-HIT_VALUE = 3.0
-budget = 100.2
+HIT_VALUE = 3.3
+budget = 100.6
 bench_budget = 17.0
-num_weeks = 7
+num_weeks = 6
 decay_rate = 0.97
-start_week = 5
-max_transfers = 1
+start_week = 7
+max_transfers = 2
 
 banned_players = ["McGinn", "Raya", "Leno", "McCarthy"]
 locked_players = ["Faes"]
@@ -185,16 +185,3 @@ for week, transfer in transfers.items():
         print("Out:", [players_df.loc[i, 'name'] for i in transfer['out']])
     else:
         print("No transfers made this week.")
-
-# Display team composition for each week
-for week in range(start_week, start_week + len(selected_main_players)):
-    print(f"\nWeek {week} Team Composition:")
-    for position in ['1', '2', '3', '4']:
-        count = sum(1 for i in selected_main_players[week] if players_df.loc[i, 'position'] == position)
-        position_name = {
-            '1': 'Goalkeepers',
-            '2': 'Defenders',
-            '3': 'Midfielders',
-            '4': 'Forwards'
-        }[position]
-        print(f"{position_name}: {count}")
