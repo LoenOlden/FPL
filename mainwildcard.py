@@ -2,16 +2,16 @@ import pulp
 import pandas as pd
 from final_player_data import player_gameweek_data
 
-HIT_VALUE = 3.3
-budget = 100.6
+HIT_VALUE = 3.0
+budget = 100.8
 bench_budget = 17.0
-num_weeks = 6
+num_weeks = 8
 decay_rate = 0.97
 start_week = 7
-max_transfers = 2
+max_transfers = 0
 
-banned_players = ["McGinn", "Raya", "Leno", "McCarthy"]
-locked_players = ["Faes"]
+banned_players = ["Pickford", "Tarkowski", "Young", "Raya", "Muric", "Ederson M.", "Areola", "Leno"]
+locked_players = []
 
 def load_player_data():
     # Convert player_gameweek_data to DataFrame

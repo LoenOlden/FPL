@@ -35,6 +35,8 @@ num = 146
 avgS = num / 38
 print(f"{poisson_probability_3SHOTS(avgS):.3f}")
 print(f"{poisson_probability_6SHOTS(avgS):.3f}")
+lambda_xgc = 2.23
+print(f"{poisson_probability_conceding_2_or_3_goals(lambda_xgc):.3f}")
 
 """
 xGA understat footystats fbref; csP, xgc23, xgc45, saves, 3shots, 6shots
@@ -55,6 +57,7 @@ FUL 1.76 1.56 1.66 = 1.66 = 0.190, 0.407, 0.080, 133, 0.537, 0.133
 WOL 2.00 1.65 1.78 = 1.81 = 0.164, 0.430, 0.100, 139, 0.543, 0.151
 MUN 1.97 1.73 1.81 = 1.84 = 0.159, 0.434, 0.104, 146, 0.547, 0.174
 WHU 2.05 1.85 1.87 = 1.92 = 0.147, 0.443, 0.115, 169, 0.532, 0.250
+IPS 2.23 csp 0.107
 """
 """
 xGA understat footystats fbref; csP, xgc23, xgc45, 3shots, 6shots
