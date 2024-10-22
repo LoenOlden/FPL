@@ -62,8 +62,8 @@ team_stats = {
 
 # Add new statistics to players based on team
 for team_id, (abbr, _) in team_mappings.items():
-    csP, xcg23, xcg45, shots3, shots6 = team_stats[abbr]
-    df.loc[df['team'] == team_id, ['csP', 'xcg23', 'xcg45', '3shots', '6shots']] = csP, xcg23, xcg45, shots3, shots6
+    csP, xgc23, xgc45, shots3, shots6 = team_stats[abbr]
+    df.loc[df['team'] == team_id, ['csP', 'xgc23', 'xgc45', '3shots', '6shots']] = csP, xgc23, xgc45, shots3, shots6
 
 # Convert DataFrame to dictionary format required for the Python script
 teams_data = {}

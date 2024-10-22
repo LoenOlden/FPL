@@ -1,6 +1,10 @@
 import math
 from scipy.stats import poisson
 
+def poisson_cleansheet(lambda_xgc):
+    prob_0 = poisson.pmf(0, lambda_xgc)
+    return prob_0
+
 def poisson_probability_3SHOTS(avgS):
     prob_3 = poisson.pmf(3, avgS)
     prob_4 = poisson.pmf(4, avgS)
@@ -31,12 +35,13 @@ def poisson_probability_conceding_4_or_5_goals(lambda_xgc):
 
     return prob_4_or_5
 
-num = 146
-avgS = num / 38
+lambda_xgc = 2.18
+avgS = 4.75
+print(f"{poisson_cleansheet(lambda_xgc):.3f}")
+print(f"{poisson_probability_conceding_2_or_3_goals(lambda_xgc):.3f}")
+print(f"{poisson_probability_conceding_4_or_5_goals(lambda_xgc):.3f}")
 print(f"{poisson_probability_3SHOTS(avgS):.3f}")
 print(f"{poisson_probability_6SHOTS(avgS):.3f}")
-lambda_xgc = 2.23
-print(f"{poisson_probability_conceding_2_or_3_goals(lambda_xgc):.3f}")
 
 """
 xGA understat footystats fbref; csP, xgc23, xgc45, saves, 3shots, 6shots
@@ -60,7 +65,7 @@ WHU 2.05 1.85 1.87 = 1.92 = 0.147, 0.443, 0.115, 169, 0.532, 0.250
 IPS 2.23 csp 0.107
 """
 """
-xGA understat footystats fbref; csP, xgc23, xgc45, 3shots, 6shots
+2023/2024 xGA understat footystats fbref; csP, xgc23, xgc45, 3shots, 6shots
 ARS 0.84 0.92 0.73 = 0.83 = 0.436, 0.192, 0.01, 0.168, 0.003
 AVL 1.71 1.38 1.58 = 1.56 = 0.210, 0.389, 0.068, 0.496, 0.083
 BOU 1.72 1.54 1.53 = 1.60 = 0.202, 0.396, 0.073, 0.527, 0.115
@@ -82,6 +87,76 @@ TOT 1.79 1.38 1.67 = 1.61 = 0.200, 0.398, 0.074, 0.475, 0.068
 WHU 2.05 1.85 1.87 = 1.92 = 0.147, 0.443, 0.115, 0.532, 0.250
 WOL 2.00 1.65 1.78 = 1.81 = 0.164, 0.430, 0.100, 0.543, 0.151
 """
+
+"""
+24/25 First 8 weeks
+footystats fbref understat xGC avg
+LIV 1.14 0.77 0.88 = 0.93
+MCI 0.92 1.07 1.21 = 1.07
+TOT 1.05 1.10 1.09 = 1.08
+AVL 1.18 1.07 1.41 = 1.22
+FUL 1.35 1.22 1.10 = 1.22
+NFO 1.45 1.08 1.29 = 1.27
+ARS 1.41 1.13 1.38 = 1.31
+BOU 1.43 1.20 1.43 = 1.35
+CHE 1.45 1.22 1.43 = 1.37
+BHA 1.21 1.66 1.61 = 1.49
+MUN 1.29 1.52 1.82 = 1.54
+CRY 1.46 1.51 1.87 = 1.61
+NEW 1.62 1.43 1.81 = 1.62
+WHU 1.55 1.61 1.94 = 1.70
+EVE 1.58 1.65 1.99 = 1.74
+BRE 1.90 1.77 1.79 = 1.82
+WOL 1.81 1.93 2.07 = 1.94
+SOU 1.71 2.09 2.42 = 2.07
+IPS 1.60 2.13 2.50 = 2.08
+LEI 1.87 2.08 2.59 = 2.18
+
+0.5 24/25 first 8 0.5 23/24
+LIV 1.14 0.77 0.88 = 0.93 1.23 = 1.08
+MCI 0.92 1.07 1.21 = 1.07 0.95 = 1.01
+TOT 1.05 1.10 1.09 = 1.08 1.61 = 1.35
+AVL 1.18 1.07 1.41 = 1.22 1.56 = 1.39
+FUL 1.35 1.22 1.10 = 1.22 1.66 = 1.44
+NFO 1.45 1.08 1.29 = 1.27 1.47 = 1.37
+ARS 1.41 1.13 1.38 = 1.31 0.83 = 1.07
+BOU 1.43 1.20 1.43 = 1.35 1.60 = 1.48
+CHE 1.45 1.22 1.43 = 1.37 1.56 = 1.47
+BHA 1.21 1.66 1.61 = 1.49 1.46 = 1.48
+MUN 1.29 1.52 1.82 = 1.54 1.84 = 1.69
+CRY 1.46 1.51 1.87 = 1.61 1.43 = 1.52
+NEW 1.62 1.43 1.81 = 1.62 1.59 = 1.61
+WHU 1.55 1.61 1.94 = 1.70 1.92 = 1.81
+EVE 1.58 1.65 1.99 = 1.74 1.50 = 1.62
+BRE 1.90 1.77 1.79 = 1.82 1.56 = 1.69
+WOL 1.81 1.93 2.07 = 1.94 1.81 = 1.88
+SOU 1.71 2.09 2.42 = 2.07 2.07 = 2.07
+IPS 1.60 2.13 2.50 = 2.08 2.08 = 2.08
+LEI 1.87 2.08 2.59 = 2.18 2.18 = 2.18
+
+xcg90 save90 csP xgc23 xgc45 3shots 6shots
+MCI 1.01 2.00 0.364 0.248 0.019 0.307 0.016
+ARS 1.07 2.40 0.343 0.266 0.023 0.395 0.035
+LIV 1.08 2.86 0.340 0.269 0.023 0.474 0.068
+TOT 1.35 2.50 0.259 0.343 0.046 0.414 0.041
+NFO 1.37 2.92 0.254 0.347 0.048 0.483 0.073
+AVL 1.39 2.64 0.249 0.352 0.050 0.440 0.050
+FUL 1.44 3.25 0.237 0.364 0.055 0.519 0.105
+CHE 1.47 3.77 0.230 0.370 0.058 0.546 0.165
+BHA 1.475 2.63 0.229 0.371 0.058 0.438 0.050
+BOU 1.48 3.67 0.228 0.372 0.059 0.544 0.153
+CRY 1.52 2.92 0.219 0.381 0.063 0.483 0.073
+NEW 1.61 3.94 0.200 0.398 0.074 0.547 0.186
+EVE 1.62 2.79 0.198 0.400 0.075 0.464 0.062
+MUN 1.69 3.11 0.185 0.412 0.084 0.506 0.091
+BRE 1.69 4.19 0.185 0.412 0.084 0.543 0.218
+WHU 1.81 3.54 0.164 0.430 0.100 0.539 0.137
+WOL 1.88 3.71 0.153 0.439 0.109 0.545 0.157
+SOU 2.07 3.75 0.126 0.457 0.136 0.546 0.162
+IPS 2.08 3.75 0.125 0.458 0.138 0.546 0.162
+LEI 2.18 4.75 0.113 0.464 0.153 0.512 0.287
+"""
+
 
 # Team mappings
 team_mappings = {
@@ -107,70 +182,26 @@ team_mappings = {
     20: ('WOL', 'Wolves')
 }
 
-"""
-Raya 5.5 0.436 
-Ederson 5.5 0.387 
-Alisson 5.5 0.292 
-Johnstone80 4.5 0.239 
-Verbruggen60 4.5 0.232 
-Sels 4.5 0.230 
-Pickford 5.0 0.223 
-Flekken 4.5 0.210 
-Sanchez80 4.5 0.210 
-Martinez 5.0 0.210 
-Pope 5.0 0.204 
-Neto 4.5 0.202 
-Vicario 5.0 0.190 
-Leno 5.0 0.190 
-Jose Sa 4.5 0.164 
-Onana 5.0 0.159 
-Areola 4.5 0.147 
-"""
 # Define defensive strengths using csP values
 defensive_strength = {
-    "ARS": 0.436,
-    "MCI": 0.387,
-    "LIV": 0.292,
-    "CPA": 0.239,
-    "BRI": 0.232,
-    "NFO": 0.230,
-    "EVE": 0.223,
-    "BRE": 0.2102,
-    "CHE": 0.2101,
-    "AVL": 0.210,
-    "NEW": 0.204,
-    "BOU": 0.202,
-    "TOT": 0.200,
-    "FUL": 0.190,
-    "WOL": 0.164,
-    "MUN": 0.159,
-    "WHU": 0.147,
-    "LEI": 0.140,
-    "IPS": 0.130,
-    "SOU": 0.120
-}
-
-# Example csP values for teams (higher means stronger defense)
-# Assuming team IDs from FPL API or any standard numbering
-csP_values = {
-    1: 0.436,  # Arsenal
-    2: 0.210,  # Aston Villa
-    3: 0.202,  # Bournemouth
-    4: 0.2102,  # Brentford
-    5: 0.232,  # Brighton
-    6: 0.2101,  # Chelsea
-    7: 0.239,  # Crystal Palace
-    8: 0.223,  # Everton
-    9: 0.190,  # Fulham
-    10: 0.292,  # Liverpool
-    11: 0.387,  # Manchester City
-    12: 0.159,  # Manchester United
-    13: 0.230,  # Nottingham Forest
-    14: 0.140,  # Leicester
-    15: 0.204,  # Newcastle
-    16: 0.200,  # Tottenham
-    17: 0.164,  # Wolves
-    18: 0.147,  # West Ham
-    19: 0.130,  # Ipswich
-    20: 0.120  # Southampton
+    "ARS": 0.343,
+    "MCI": 0.364,
+    "LIV": 0.340,
+    "CPA": 0.219,
+    "BRI": 0.229,
+    "NFO": 0.254,
+    "EVE": 0.198,
+    "BRE": 0.185,
+    "CHE": 0.230,
+    "AVL": 0.249,
+    "NEW": 0.200,
+    "BOU": 0.228,
+    "TOT": 0.259,
+    "FUL": 0.237,
+    "WOL": 0.153,
+    "MUN": 0.185,
+    "WHU": 0.164,
+    "LEI": 0.113,
+    "IPS": 0.125,
+    "SOU": 0.126
 }

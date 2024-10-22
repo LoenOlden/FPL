@@ -2,13 +2,13 @@ import pulp
 import pandas as pd
 from final_player_data import player_gameweek_data
 
-# Set the budget and other values
-budget = 101.1
+# Example
+budget = 101.7
 bench_budget = 17.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
-num_weeks = 6
-start_week = 8
+num_weeks = 8
+start_week = 9
 max_transfers = 2
 
 banned_players = []

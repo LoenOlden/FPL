@@ -16,8 +16,8 @@ def calculate_goalkeeper_value(player):
         save_3points = player["3shots"] * 1.0
         save_6points = player["6shots"] * 1.0
         save_points = save_3points + save_6points
-        goal2CPen = -1 * (player["xcg23"])
-        goal4CPen = -1 * (player["xcg45"])
+        goal2CPen = -1.0 * (player["xgc23"])
+        goal4CPen = -1.0 * (player["xgc45"])
         return (clean_sheet_points + save_points + appearance_points + goal2CPen + goal4CPen + 1) * appearance_points
     except KeyError as e:
         print(f"KeyError: {e} - Missing in player data: {player}")
@@ -29,8 +29,8 @@ def calculate_defender_value(player):
         clean_sheet_points = player["csP"] * 4.0
         goal_points = player["xG90"] * 6.0
         assist_points = player["xA90"] * 3.0
-        goal2CPen = -1 * (player["xcg23"])
-        goal4CPen = -1 * (player["xcg45"])
+        goal2CPen = -1 * (player["xgc23"])
+        goal4CPen = -1 * (player["xgc45"])
         return (clean_sheet_points + goal_points + assist_points + appearance_points + goal2CPen + goal4CPen + 1) * appearance_points
     except KeyError as e:
         print(f"KeyError: {e} - Missing in player data: {player}")

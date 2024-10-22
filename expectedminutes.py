@@ -21,8 +21,8 @@ def process_team_data(teams_data):
                 "xA90": player["xA90"],
                 "xGC90": player["xGC90"],
                 "csP": player["csP"],
-                "xcg23": player["xcg23"],
-                "xcg45": player["xcg45"],
+                "xgc23": player["xgc23"],
+                "xgc45": player["xgc45"],
                 "3shots": player["3shots"],
                 "6shots": player["6shots"],
             }
@@ -32,7 +32,7 @@ def process_team_data(teams_data):
 
 def predict_expected_minutes(players_df):
     # Use available features for prediction
-    X = players_df[['minutes', 'position', 'xG90', 'xA90', 'xGC90', 'csP', 'xcg23', 'xcg45', '3shots', '6shots']]
+    X = players_df[['minutes', 'position', 'xG90', 'xA90', 'xGC90', 'csP', 'xgc23', 'xgc45', '3shots', '6shots']]
     y = players_df['minutes']  # Use 'minutes' as the target variable, as it's the closest thing we have to the past average
 
     model = LinearRegression()
@@ -141,8 +141,8 @@ def format_player_data(player):
     return (f'{{"id": {player["id"]}, "web_name": "{player["web_name"]}", "team": {player["team"]}, '
             f'"position": {player["position"]}, "cost": {player["cost"]}, "minutes": {player["minutes"]}, '
             f'"saves_per_90": {player["saves_per_90"]}, "xG90": {player["xG90"]}, "xA90": {player["xA90"]}, '
-            f'"xGC90": {player["xGC90"]}, "csP": {player["csP"]}, "xcg23": {player["xcg23"]}, '
-            f'"xcg45": {player["xcg45"]}, "3shots": {player["3shots"]}, "6shots": {player["6shots"]}, '
+            f'"xGC90": {player["xGC90"]}, "csP": {player["csP"]}, "xgc23": {player["xgc23"]}, '
+            f'"xgc45": {player["xgc45"]}, "3shots": {player["3shots"]}, "6shots": {player["6shots"]}, '
             f'"expected_minutes": {player["expected_minutes"]:.2f}}},')
 
 def main():
