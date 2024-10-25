@@ -55,11 +55,24 @@ team_coefficient = {
     'WHU': 1.06, 'WOL': 1.30
 }
 """
+"""
 team_coefficient = {
     'ARS': 0.695, 'AVL': 0.970, 'BOU': 1.125, 'BRE': 1.110, 'BHA': 1.04, 'CHE': 0.825,
     'CRY': 1.035, 'EVE': 1.090, 'FUL': 1.160, 'IPS': 1.530, 'LEI': 1.380, 'LIV': 0.735,
     'MCI': 0.670, 'MUN': 1.050, 'NEW': 0.835, 'NFO': 1.200, 'SOU': 1.440, 'TOT': 0.935,
     'WHU': 1.175, 'WOL': 1.320
+}
+
+8 GW's new normalization
+LIV: 0.70 TOT: 0.72 MCI: 0.75 ARS: 0.82 BOU: 0.84 FUL: 0.85 CHE: 0.87 AVL: 0.92 MUN: 0.94
+BHA: 0.95 NOT: 0.99 NEW: 1.06 WHU: 1.08 BRE: 1.13 CRY: 1.13 EVE: 1.19 SOU: 1.20 WOL: 1.27
+LEI: 1.30 IPS: 1.30
+"""
+team_coefficient = {
+    'ARS': 0.76, 'AVL': 0.95, 'BOU': 0.98, 'BRE': 1.12, 'BHA': 1.00, 'CHE': 0.85,
+    'CRY': 1.08, 'EVE': 1.14, 'FUL': 1.01, 'IPS': 1.30, 'LEI': 1.30, 'LIV': 0.72,
+    'MCI': 0.73, 'MUN': 1.00, 'NEW': 0.95, 'NFO': 1.10, 'SOU': 1.20, 'TOT': 0.83,
+    'WHU': 1.13, 'WOL': 1.27
 }
 
 home_coefficient = 1.147

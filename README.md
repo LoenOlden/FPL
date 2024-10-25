@@ -1,4 +1,4 @@
-This is far from a commercial and advanced models, just a basic implementation of an FPL Solver, mainly focused on expected stats.
+This is far from a commercial and advanced models, just a basic implementation of an FPL Solver, mainly focused on expected stats. Also not clean code, lots of garbage code to restructure.
 
 Preseason expected minutes was working great but everything changes so quickly with news and injuries so expectedminutes.py file is pretty much useless for now.
 

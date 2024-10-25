@@ -89,6 +89,9 @@ WOL 2.00 1.65 1.78 = 1.81 = 0.164, 0.430, 0.100, 0.543, 0.151
 """
 
 """
+https://footystats.org/england/premier-league/xg
+https://fbref.com/en/comps/9/Premier-League-Stats
+https://understat.com/league/EPL
 24/25 First 8 weeks
 footystats fbref understat xGC avg
 LIV 1.14 0.77 0.88 = 0.93
