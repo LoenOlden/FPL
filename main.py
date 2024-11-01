@@ -3,13 +3,13 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Example
-budget = 101.8
+budget = 102.0
 bench_budget = 17.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
 num_weeks = 7
-start_week = 9
-max_transfers = 2
+start_week = 10
+max_transfers = 3
 
 banned_players = []
 locked_players = []
