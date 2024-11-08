@@ -3,11 +3,11 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 HIT_VALUE = 3.0
-budget = 101.0
+budget = 100.6
 bench_budget = 17.0
-num_weeks = 6
+num_weeks = 7
 decay_rate = 0.97
-start_week = 9
+start_week = 11
 max_transfers = 0
 
 banned_players = []

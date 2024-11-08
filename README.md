@@ -4,7 +4,7 @@ Preseason expected minutes was working great but everything changes so quickly w
 
 My advice is not to run that file but accept updated_player_data.py file as a base and make the changes there as you wish. I manually update expected minutes looking at fplreview's minutes every week. I will try to update before every gameweek but i can't promise for all the season.
 
-You can update your minutes at updated_player_data.py, also can change xG and xA stats based on last couple of games or market odds. I almost totally used 23/24 premier league data by FPL API.
+You can update your minutes at updated_player_data.py, also can change xG and xA stats based on last couple of games or market odds. I almost totally used 23/24 premier league data by FPL API. As the season goes, i manually update the stats based on this seasons stats, using understat, fbref and sometimes footystats data. I generally take average of them so reducing the error rate.
 
 After making changes as you wish at updated_player_data.py file, then you can run fplformula.py file.
 
