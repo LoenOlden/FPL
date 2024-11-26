@@ -11,13 +11,13 @@ position_mapping = {
 
 def calculate_goalkeeper_value(player):
     try:
-        appearance_points = player["expected_minutes"] / 95
-        clean_sheet_points = player["csP"] * 4.0
+        appearance_points = player["expected_minutes"] / 93
+        clean_sheet_points = player["csP"] * 4.2
         save_3points = player["3shots"] * 1.0
-        save_6points = player["6shots"] * 1.0
+        save_6points = player["6shots"] * 2.0
         save_points = save_3points + save_6points
         goal2CPen = -1.0 * (player["xgc23"])
-        goal4CPen = -1.0 * (player["xgc45"])
+        goal4CPen = -2.0 * (player["xgc45"])
         return (clean_sheet_points + save_points + appearance_points + goal2CPen + goal4CPen + 1) * appearance_points
     except KeyError as e:
         print(f"KeyError: {e} - Missing in player data: {player}")
@@ -25,12 +25,12 @@ def calculate_goalkeeper_value(player):
 
 def calculate_defender_value(player):
     try:
-        appearance_points = player["expected_minutes"] / 95
-        clean_sheet_points = player["csP"] * 4.0
-        goal_points = player["xG90"] * 6.0
-        assist_points = player["xA90"] * 3.0
-        goal2CPen = -1 * (player["xgc23"])
-        goal4CPen = -1 * (player["xgc45"])
+        appearance_points = player["expected_minutes"] / 93
+        clean_sheet_points = player["csP"] * 4.2
+        goal_points = player["xG90"] * 6.3
+        assist_points = player["xA90"] * 3.15
+        goal2CPen = -1.0 * (player["xgc23"])
+        goal4CPen = -2.0 * (player["xgc45"])
         return (clean_sheet_points + goal_points + assist_points + appearance_points + goal2CPen + goal4CPen + 1) * appearance_points
     except KeyError as e:
         print(f"KeyError: {e} - Missing in player data: {player}")
@@ -96,22 +96,22 @@ output_file = "sorted_players_data.py"
 with open(output_file, "w", encoding="utf-8") as file:
     file.write("goalkeepers_sorted = [\n")
     for player in goalkeepers_sorted:
-        file.write(f'    {{ "id": "{player["id"]}", "name": "{player["name"]}", "position": "{player["position"]}", "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
+        file.write(f'    {{ "id": {player["id"]}, "name": "{player["name"]}", "position": {player["position"]}, "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
     file.write("]\n\n")
 
     file.write("defenders_sorted = [\n")
     for player in defenders_sorted:
-        file.write(f'    {{ "id": "{player["id"]}", "name": "{player["name"]}", "position": "{player["position"]}", "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
+        file.write(f'    {{ "id": {player["id"]}, "name": "{player["name"]}", "position": {player["position"]}, "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
     file.write("]\n\n")
 
     file.write("midfielders_sorted = [\n")
     for player in midfielders_sorted:
-        file.write(f'    {{ "id": "{player["id"]}", "name": "{player["name"]}", "position": "{player["position"]}", "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
+        file.write(f'    {{ "id": {player["id"]}, "name": "{player["name"]}", "position": {player["position"]}, "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
     file.write("]\n\n")
 
     file.write("forwards_sorted = [\n")
     for player in forwards_sorted:
-        file.write(f'    {{ "id": "{player["id"]}", "name": "{player["name"]}", "position": "{player["position"]}", "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
+        file.write(f'    {{ "id": {player["id"]}, "name": "{player["name"]}", "position": {player["position"]}, "team": {player["team"]}, "cost": {player["cost"]}, "xP": {player["xP"]:.2f} }},\n')
     file.write("]\n")
 
 print(f"Player data saved to '{output_file}'")

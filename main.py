@@ -3,18 +3,18 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Example
-budget = 100.6
+budget = 102.4
 bench_budget = 17.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
 num_weeks = 6
-start_week = 12
+start_week = 13
 max_transfers = 2
 
-banned_players = ["Havertz"]
-locked_players = ["Flekken", "Sels", "Muñoz", "Dunk"]
+banned_players = []
+locked_players = []
 # Set your main 15 players (could be retrieved from fpl api later on)
-initial_players = ["Flekken", "Sels", "Gvardiol", "Gabriel", "Muñoz", "Dunk", "Pinnock", "Palmer", "Mbeumo", "M.Salah", "Rogers", "Johnson",
+initial_players = ["Flekken", "Sels", "Gvardiol", "Gabriel", "Muñoz", "Dunk", "Pinnock", "Palmer", "Mbeumo", "M.Salah", "Rogers", "Gordon",
                    "Raúl", "Solanke", "Isak"]
 
 start_week -= 1
@@ -64,21 +64,21 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
     for week in range(start_week, start_week + num_weeks):
         # Regular constraints apply for all weeks
         prob += pulp.lpSum(x_selected[i][week] for i in players.index) == 15, f"Total_players_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '1') == 2, f"GK_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '2') == 5, f"DEF_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '3') == 5, f"MID_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '4') == 3, f"FWD_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 1) == 2, f"GK_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 2) == 5, f"DEF_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 3) == 5, f"MID_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 4) == 3, f"FWD_week_{week}"
 
         prob += pulp.lpSum(x_main[i][week] for i in players.index) == 11, f"Main_players_week_{week}"
         prob += pulp.lpSum(x_bench[i][week] for i in players.index) == 4, f"Bench_players_week_{week}"
 
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '1') == 1, f"Main_GK_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '2') >= 3, f"Min_DEF_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '2') <= 5, f"Max_DEF_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '3') >= 2, f"Min_MID_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '3') <= 5, f"Max_MID_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '4') >= 1, f"Min_FWD_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '4') <= 3, f"Max_FWD_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 1) == 1, f"Main_GK_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 2) >= 3, f"Min_DEF_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 2) <= 5, f"Max_DEF_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 3) >= 2, f"Min_MID_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 3) <= 5, f"Max_MID_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 4) >= 1, f"Min_FWD_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 4) <= 3, f"Max_FWD_week_{week}"
 
         for i in players.index:
             prob += x_main[i][week] + x_bench[i][week] == x_selected[i][week], f"Main_or_bench_{i}_week_{week}"

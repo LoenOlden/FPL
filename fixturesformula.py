@@ -40,61 +40,43 @@ team_names_to_abbr = {
     'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nott\'m Forest': 'NFO',
     'Southampton': 'SOU', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL'
 }
-"""
-team_coefficient = {
-    'ARS': 0.65, 'AVL': 0.96, 'BOU': 0.99, 'BRE': 1.00, 'BHA': 0.98, 'CHE': 0.83,
-    'CRY': 1.05, 'EVE': 1.00, 'FUL': 1.18, 'IPS': 1.6, 'LEI': 1.48, 'LIV': 0.69,
-    'MCI': 0.64, 'MUN': 1.2, 'NEW': 0.81, 'NFO': 1.06, 'SOU': 1.46, 'TOT': 0.93,
-    'WHU': 1.29, 'WOL': 1.34
+
+team_coef_Def = {
+    'LIV': 0.699, 'ARS': 0.706, 'MCI': 0.780, 'NFO': 0.845, 'FUL': 0.851,
+    'TOT': 0.877, 'AVL': 0.898, 'CHE': 0.928, 'BOU': 0.953, 'NEW': 0.971,
+    'EVE': 0.981, 'BHA': 1.003, 'MUN': 1.041, 'CRY': 1.042, 'BRE': 1.126,
+    'WHU': 1.151, 'WOL': 1.152, 'LEI': 1.307, 'IPS': 1.327, 'SOU': 1.359
 }
 
-team_coefficient = {
-    'ARS': 0.74, 'AVL': 0.98, 'BOU': 1.26, 'BRE': 1.22, 'BHA': 1.10, 'CHE': 0.82,
-    'CRY': 1.02, 'EVE': 1.18, 'FUL': 1.14, 'IPS': 1.46, 'LEI': 1.38, 'LIV': 0.78,
-    'MCI': 0.70, 'MUN': 0.90, 'NEW': 0.86, 'NFO': 1.34, 'SOU': 1.42, 'TOT': 0.94,
-    'WHU': 1.06, 'WOL': 1.30
-}
-"""
-"""
-team_coefficient = {
-    'ARS': 0.695, 'AVL': 0.970, 'BOU': 1.125, 'BRE': 1.110, 'BHA': 1.04, 'CHE': 0.825,
-    'CRY': 1.035, 'EVE': 1.090, 'FUL': 1.160, 'IPS': 1.530, 'LEI': 1.380, 'LIV': 0.735,
-    'MCI': 0.670, 'MUN': 1.050, 'NEW': 0.835, 'NFO': 1.200, 'SOU': 1.440, 'TOT': 0.935,
-    'WHU': 1.175, 'WOL': 1.320
-}
-
-8 GW's new normalization
-LIV: 0.70 TOT: 0.72 MCI: 0.75 ARS: 0.82 BOU: 0.84 FUL: 0.85 CHE: 0.87 AVL: 0.92 MUN: 0.94
-BHA: 0.95 NOT: 0.99 NEW: 1.06 WHU: 1.08 BRE: 1.13 CRY: 1.13 EVE: 1.19 SOU: 1.20 WOL: 1.27
-LEI: 1.30 IPS: 1.30
-"""
-team_coefficient = {
-    'ARS': 0.76, 'AVL': 0.95, 'BOU': 0.98, 'BRE': 1.12, 'BHA': 1.00, 'CHE': 0.85,
-    'CRY': 1.08, 'EVE': 1.14, 'FUL': 1.01, 'IPS': 1.30, 'LEI': 1.30, 'LIV': 0.72,
-    'MCI': 0.73, 'MUN': 1.00, 'NEW': 0.95, 'NFO': 1.10, 'SOU': 1.20, 'TOT': 0.83,
-    'WHU': 1.13, 'WOL': 1.27
+team_coef_Att = {
+    'MCI': 0.722, 'LIV': 0.749, 'TOT': 0.788, 'CHE': 0.848, 'ARS': 0.866,
+    'BOU': 0.915, 'AVL': 0.941, 'FUL': 0.972, 'NEW': 0.986, 'MUN': 0.992,
+    'BRE': 0.995, 'BHA': 1.005, 'WHU': 1.106, 'CRY': 1.125, 'NFO': 1.129,
+    'EVE': 1.192, 'SOU': 1.317, 'WOL': 1.319, 'IPS': 1.388, 'LEI': 1.388
 }
 
 home_coefficient = 1.147
 away_coefficient = 0.853
 
-def adjust_points(player, opponent_team, is_home):
+def adjust_points(player, opponent_team, is_home, probability):
     raw_points = player["xP"]
+    position = player["position"]
     team_abbr = team_mappings.get(player["team"], 'UNKNOWN')
-    team_coef = team_coefficient.get(opponent_team, 1)  # Default to 1 if not found
+    
+    # Select the appropriate coefficient based on position
+    if position in (1, 2):  # Goalkeepers and defenders
+        opponent_coef = team_coef_Att.get(opponent_team, 1)  # Attack coefficient
+    else:  # Midfielders and forwards
+        opponent_coef = team_coef_Def.get(opponent_team, 1)  # Defense coefficient
 
-    # Initialize adjusted points
-    home_adj_points = 0
-    away_adj_points = 0
-
+    # Adjust points based on home/away, opponent coefficient, and fixture probability
     if is_home:
-        home_adj_points = raw_points * home_coefficient
-        adjusted_points = home_adj_points * team_coef
+        adjusted_points = raw_points * home_coefficient * opponent_coef * probability
     else:
-        away_adj_points = raw_points * away_coefficient
-        adjusted_points = away_adj_points * team_coef
+        adjusted_points = raw_points * away_coefficient * opponent_coef * probability
 
     return round(adjusted_points, 2)
+
 
 def calculate_adjusted_points(player_data, fixtures_data, start_gw, end_gw):
     adjusted_points_dict = {}
@@ -109,6 +91,7 @@ def calculate_adjusted_points(player_data, fixtures_data, start_gw, end_gw):
         for _, fixture in gw_fixtures.iterrows():
             home_team_full = fixture["Home Team"]
             away_team_full = fixture["Away Team"]
+            probability = fixture["Probability"]
 
             home_team = team_names_to_abbr.get(home_team_full, 'UNKNOWN')
             away_team = team_names_to_abbr.get(away_team_full, 'UNKNOWN')
@@ -126,8 +109,8 @@ def calculate_adjusted_points(player_data, fixtures_data, start_gw, end_gw):
                 else:
                     continue
 
-                adj_points = adjust_points(player, opponent_team, is_home)
-                adjusted_points_dict[player["id"]][f"GW{gw}"] = adj_points
+                adj_points = adjust_points(player, opponent_team, is_home, probability)
+                adjusted_points_dict[player["id"]][f"GW{gw}"] += adj_points
 
     return adjusted_points_dict
 
