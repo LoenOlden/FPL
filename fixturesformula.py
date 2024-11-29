@@ -131,10 +131,10 @@ def format_player_data(player_data):
     return formatted_data
 
 # Calculate adjusted points for goalkeepers, defenders, midfielders, and forwards
-goalkeepers_points = calculate_adjusted_points(goalkeepers_sorted, fixtures_data, 1, 25)
-defenders_points = calculate_adjusted_points(defenders_sorted, fixtures_data, 1, 25)
-midfielders_points = calculate_adjusted_points(midfielders_sorted, fixtures_data, 1, 25)
-forwards_points = calculate_adjusted_points(forwards_sorted, fixtures_data, 1, 25)
+goalkeepers_points = calculate_adjusted_points(goalkeepers_sorted, fixtures_data, 1, 27)
+defenders_points = calculate_adjusted_points(defenders_sorted, fixtures_data, 1, 27)
+midfielders_points = calculate_adjusted_points(midfielders_sorted, fixtures_data, 1, 27)
+forwards_points = calculate_adjusted_points(forwards_sorted, fixtures_data, 1, 27)
 
 # Combine all player data
 combined_player_data = {**goalkeepers_points, **defenders_points, **midfielders_points, **forwards_points}
