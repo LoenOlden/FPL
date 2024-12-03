@@ -149,3 +149,5 @@ with open(output_file_path, 'w', encoding='utf-8') as f:
     for player in formatted_combined_player_data:
         f.write(f"    {json.dumps(player, ensure_ascii=False)},\n")
     f.write("]\n")
+    
+print(f"Player data saved to '{output_file_path}'")
