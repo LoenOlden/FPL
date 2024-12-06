@@ -3,19 +3,19 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Example
-budget = 100.6
+budget = 101.7
 bench_budget = 17.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
 num_weeks = 7
-start_week = 14
+start_week = 15
 max_transfers = 3
 
 banned_players = []
 locked_players = ["Flekken", "Sels"]
 # Set your main 15 players (could be retrieved from fpl api later on)
-initial_players = ["Flekken", "Sels", "Gvardiol", "Gabriel", "Muñoz", "Dunk", "Pinnock", "Palmer", "Mbeumo", "M.Salah", "Rogers", "Gordon",
-                   "Raúl", "Solanke", "Isak"]
+initial_players = ["Flekken", "Sels", "Gvardiol", "Gabriel", "Muñoz", "Dunk", "Pinnock", "Palmer", "Semenyo", "M.Salah", "Rogers", "Gordon",
+                   "Raúl", "Watkins", "Isak"]
 
 start_week -= 1
 num_weeks += 1
