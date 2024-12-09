@@ -41,4 +41,3 @@
 40 starts_per_90,
 41 clean_sheets_per_90
 42 avg_min
-what i need: id, web_name, team, position, cost, minutes, saves_per_90, starts, expected_goals_per_90, expected_assists_per_90, expected_goals_conceded_per_90, avg_min

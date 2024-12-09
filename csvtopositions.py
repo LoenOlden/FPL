@@ -31,7 +31,7 @@ position_dict = {}
 for position_id in positions:
     position_df = df[df['position'] == position_id]
     position_list = position_df.to_dict(orient='records')
-    position_dict[position_id] = position_list  # No conversion to int needed
+    position_dict[position_id] = position_list
 
 python_file = 'positions_data.py'
 with open(python_file, 'w', encoding='utf-8') as f:

@@ -7,7 +7,7 @@ budget = 100.6
 bench_budget = 17.0
 num_weeks = 7
 decay_rate = 0.97
-start_week = 11
+start_week = 16
 max_transfers = 0
 
 banned_players = []

@@ -35,7 +35,7 @@ def poisson_probability_conceding_4_or_5_goals(lambda_xgc):
 
     return prob_4_or_5
 
-lambda_xgc = 2.10
+lambda_xgc = 1.90
 avgS = 4.25
 csP = poisson_cleansheet(lambda_xgc)
 xgc23 = poisson_probability_conceding_2_or_3_goals(lambda_xgc)
