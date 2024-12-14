@@ -224,7 +224,7 @@ def calculate_adjusted_points(player_data, fixtures_data, start_gw, end_gw):
                 elif player["position"] == 4:  # Forward
                     adj_points = round(calculate_forward_value(player, opponent_data, is_home, fix_prob), 2)
 
-                adjusted_points_dict[player["id"]][f"GW{gw}"] += adj_points
+                adjusted_points_dict[player["id"]][f"GW{gw}"] += round(adj_points, 2)
 
     return adjusted_points_dict
 

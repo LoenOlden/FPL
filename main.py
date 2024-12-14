@@ -3,7 +3,7 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Example
-budget = 102.0
+budget = 102.1
 bench_budget = 17.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
