@@ -4,7 +4,7 @@ from final_player_data import player_gameweek_data
 
 HIT_VALUE = 3.0
 budget = 100.6
-bench_budget = 17.0
+min_bench_budget = 17.0
 num_weeks = 7
 decay_rate = 0.97
 start_week = 16
@@ -40,7 +40,7 @@ def apply_decay_factors(players, decay_factors):
             if week in decay_factors:
                 players[gw] = players[gw] * decay_factors[week]
 
-def create_optimization_problem(players, budget, bench_budget, decay_factors, num_weeks, start_week, locked_players):
+def create_optimization_problem(players, budget, min_bench_budget, decay_factors, num_weeks, start_week, locked_players):
     prob = pulp.LpProblem("FantasyFootballTeamSelection", pulp.LpMaximize)
     # Decision variables
     x_selected = pulp.LpVariable.dicts("x_selected", (players.index, range(start_week, start_week + num_weeks)), cat='Binary')
@@ -84,7 +84,7 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
             prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'team'] == team) <= 3, f"Max_players_from_{team}_week_{week}"
 
         prob += pulp.lpSum(players.loc[i, 'price'] * x_selected[i][week] for i in players.index) <= budget, f"Budget_week_{week}"
-        prob += pulp.lpSum(players.loc[i, 'price'] * x_bench[i][week] for i in players.index) >= bench_budget, f"Bench_Budget_week_{week}"
+        prob += pulp.lpSum(players.loc[i, 'price'] * x_bench[i][week] for i in players.index) >= min_bench_budget, f"min_bench_budget_week_{week}"
 
         # Ensure only one captain is selected per week
         prob += pulp.lpSum(x_captain[i][week] for i in players.index) == 1, f"One_captain_week_{week}"
@@ -109,7 +109,7 @@ def create_optimization_problem(players, budget, bench_budget, decay_factors, nu
 
     return prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain
 
-def optimize_team(players, budget, bench_budget, num_weeks, decay_rate, start_week, locked_players):
+def optimize_team(players, budget, min_bench_budget, num_weeks, decay_rate, start_week, locked_players):
     # Determine the gameweeks dynamically
     gameweeks = [col for col in players.columns if col.startswith('GW') and int(col[2:]) >= start_week][:num_weeks]
 
@@ -123,7 +123,7 @@ def optimize_team(players, budget, bench_budget, num_weeks, decay_rate, start_we
     apply_decay_factors(players, decay_factors)
 
     # Create optimization problem
-    prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain = create_optimization_problem(players, budget, bench_budget, decay_factors, num_weeks, start_week, locked_players)
+    prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain = create_optimization_problem(players, budget, min_bench_budget, decay_factors, num_weeks, start_week, locked_players)
 
     # Solve the problem
     prob.solve()
@@ -172,7 +172,7 @@ def display_team(players, selected_main_players, selected_bench_players, selecte
 players_df = load_player_data()
 
 # Optimize the team
-selected_main_players, selected_bench_players, selected_captains, transfers = optimize_team(players_df, budget, bench_budget, num_weeks, decay_rate, start_week, locked_players)
+selected_main_players, selected_bench_players, selected_captains, transfers = optimize_team(players_df, budget, min_bench_budget, num_weeks, decay_rate, start_week, locked_players)
 
 # Display the selected players with names and their scores for each gameweek
 display_team(players_df, selected_main_players, selected_bench_players, selected_captains)

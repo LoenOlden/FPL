@@ -232,7 +232,7 @@ def calculate_adjusted_points(player_data, fixtures_data, start_gw, end_gw):
 # Combine player data with calculated gameweek values and adjusted points
 formatted_combined_player_data = []
 start_gw = 1  # starting gameweek
-end_gw = 27    # ending gameweek
+end_gw = 28    # ending gameweek
 
 # Step 1: Calculate adjusted points
 for player in players_data:
