@@ -8,8 +8,8 @@ min_bench_budget = 16.0
 HIT_VALUE = 3.0
 decay_rate = 0.97
 num_weeks = 8
-start_week = 17
-max_transfers = 2
+start_week = 18
+max_transfers = 4
 
 banned_players = []
 locked_players = []
@@ -25,7 +25,7 @@ def load_player_data():
     gameweek_data = []
     for player in player_gameweek_data:
         if player["name"] in banned_players or player["GW1"] < 0.6:
-            continue  # Skip players with GW1 score of 0
+            continue
         scores = {gw: float(score) for gw, score in player.items() if gw.startswith('GW')}
         gameweek_data.append({
             'id': player["id"],
