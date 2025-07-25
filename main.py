@@ -3,19 +3,19 @@ import pandas as pd
 from final_player_data import player_gameweek_data
 
 # Example
-budget = 100.7
-min_bench_budget = 16.0
-HIT_VALUE = 3.0
-decay_rate = 0.97
-num_weeks = 8
-start_week = 18
-max_transfers = 4
+budget = 102.4
+min_bench_budget = 12.0
+HIT_VALUE = 2.0
+decay_rate = 1.0
+num_weeks = 1
+start_week = 38
+max_transfers = 1
 
 banned_players = []
 locked_players = []
 # Set your main 15 players (could be retrieved from fpl api later on)
-initial_players = ["Flekken", "Sels", "Gvardiol", "Gabriel", "Muñoz", "Dunk", "Alexander-Arnold", "Palmer", "Semenyo", "M.Salah", "Rogers", "Gordon",
-                   "Raúl", "Solanke", "Isak"]
+initial_players = ["Arrizabalaga", "Pope", "Virgil", "Burn", "Muñoz", "Branthwaite", "N.Williams", "Palmer", "Eze",
+            "M.Salah", "Mbeumo", "Minteh", "Wissa", "Wood", "Marmoush"]
 
 start_week -= 1
 num_weeks += 1
@@ -24,8 +24,10 @@ def load_player_data():
     # Convert player_gameweek_data to DataFrame
     gameweek_data = []
     for player in player_gameweek_data:
-        if player["name"] in banned_players or player["GW1"] < 0.6:
+        if player["name"] in banned_players or player["position"] == 5:
             continue
+        #if player["GW38"] < 0.3:
+            #continue
         scores = {gw: float(score) for gw, score in player.items() if gw.startswith('GW')}
         gameweek_data.append({
             'id': player["id"],
@@ -139,7 +141,6 @@ def optimize_team(players, budget, min_bench_budget, initial_players, start_week
         print("Solver Status:", pulp.LpStatus[prob.status])
         for constraint in prob.constraints.values():
             print(f"Constraint {constraint.name}: {constraint.value()}")
-        raise Exception("No optimal solution found. Check the constraints and budget limits.")
 
     # Extract the selected players for each week
     selected_main_players = {week: [i for i in players.index if x_main[i][week].varValue == 1] for week in range(start_week, start_week + num_weeks)}

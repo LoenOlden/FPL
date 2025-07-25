@@ -2,22 +2,24 @@ import pulp
 import pandas as pd
 from final_player_data import player_gameweek_data
 
-HIT_VALUE = 3.0
-budget = 100.6
-min_bench_budget = 17.0
-num_weeks = 7
-decay_rate = 0.97
-start_week = 16
+HIT_VALUE = 4.0
+budget = 100.0
+bench_budget = 0.0
+num_weeks = 8
+decay_rate = 0.99
+start_week = 1
 max_transfers = 0
 
-banned_players = []
-locked_players = []
+banned_players = ["Füllkrug", "R.Gomes", "Munetsi", "Doherty", "Raúl", "Wood", "Cash", "Mayenda"]
+locked_players = ["Kelleher", "José Sá", "Palmer"]
 
 def load_player_data():
     # Convert player_gameweek_data to DataFrame
     gameweek_data = []
     for player in player_gameweek_data:
         if player["name"] in banned_players:
+            continue
+        if player['GW1'] < 0.8:
             continue
         scores = {gw: float(score) for gw, score in player.items() if gw.startswith('GW')}
         gameweek_data.append({
@@ -40,7 +42,7 @@ def apply_decay_factors(players, decay_factors):
             if week in decay_factors:
                 players[gw] = players[gw] * decay_factors[week]
 
-def create_optimization_problem(players, budget, min_bench_budget, decay_factors, num_weeks, start_week, locked_players):
+def create_optimization_problem(players, budget, bench_budget, decay_factors, num_weeks, start_week, locked_players):
     prob = pulp.LpProblem("FantasyFootballTeamSelection", pulp.LpMaximize)
     # Decision variables
     x_selected = pulp.LpVariable.dicts("x_selected", (players.index, range(start_week, start_week + num_weeks)), cat='Binary')
@@ -60,21 +62,21 @@ def create_optimization_problem(players, budget, min_bench_budget, decay_factors
     for week in range(start_week, start_week + num_weeks):
         week_index = week - start_week
         prob += pulp.lpSum(x_selected[i][week] for i in players.index) == 15, f"Total_players_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '1') == 2, f"GK_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '2') == 5, f"DEF_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '3') == 5, f"MID_week_{week}"
-        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == '4') == 3, f"FWD_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 1) == 2, f"GK_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 2) == 5, f"DEF_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 3) == 5, f"MID_week_{week}"
+        prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'position'] == 4) == 3, f"FWD_week_{week}"
 
         prob += pulp.lpSum(x_main[i][week] for i in players.index) == 11, f"Main_players_week_{week}"
         prob += pulp.lpSum(x_bench[i][week] for i in players.index) == 4, f"Bench_players_week_{week}"
 
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '1') == 1, f"Main_GK_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '2') >= 3, f"Min_DEF_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '2') <= 5, f"Max_DEF_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '3') >= 2, f"Min_MID_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '3') <= 5, f"Max_MID_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '4') >= 1, f"Min_FWD_week_{week}"
-        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == '4') <= 3, f"Max_FWD_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 1) == 1, f"Main_GK_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 2) >= 3, f"Min_DEF_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 2) <= 5, f"Max_DEF_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 3) >= 2, f"Min_MID_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 3) <= 5, f"Max_MID_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 4) >= 1, f"Min_FWD_week_{week}"
+        prob += pulp.lpSum(x_main[i][week] for i in players.index if players.loc[i, 'position'] == 4) <= 3, f"Max_FWD_week_{week}"
 
         for i in players.index:
             prob += x_main[i][week] + x_bench[i][week] == x_selected[i][week], f"Main_or_bench_{i}_week_{week}"
@@ -84,7 +86,7 @@ def create_optimization_problem(players, budget, min_bench_budget, decay_factors
             prob += pulp.lpSum(x_selected[i][week] for i in players.index if players.loc[i, 'team'] == team) <= 3, f"Max_players_from_{team}_week_{week}"
 
         prob += pulp.lpSum(players.loc[i, 'price'] * x_selected[i][week] for i in players.index) <= budget, f"Budget_week_{week}"
-        prob += pulp.lpSum(players.loc[i, 'price'] * x_bench[i][week] for i in players.index) >= min_bench_budget, f"min_bench_budget_week_{week}"
+        prob += pulp.lpSum(players.loc[i, 'price'] * x_bench[i][week] for i in players.index) >= bench_budget, f"Bench_Budget_week_{week}"
 
         # Ensure only one captain is selected per week
         prob += pulp.lpSum(x_captain[i][week] for i in players.index) == 1, f"One_captain_week_{week}"
@@ -109,7 +111,7 @@ def create_optimization_problem(players, budget, min_bench_budget, decay_factors
 
     return prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain
 
-def optimize_team(players, budget, min_bench_budget, num_weeks, decay_rate, start_week, locked_players):
+def optimize_team(players, budget, bench_budget, num_weeks, decay_rate, start_week, locked_players):
     # Determine the gameweeks dynamically
     gameweeks = [col for col in players.columns if col.startswith('GW') and int(col[2:]) >= start_week][:num_weeks]
 
@@ -123,7 +125,7 @@ def optimize_team(players, budget, min_bench_budget, num_weeks, decay_rate, star
     apply_decay_factors(players, decay_factors)
 
     # Create optimization problem
-    prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain = create_optimization_problem(players, budget, min_bench_budget, decay_factors, num_weeks, start_week, locked_players)
+    prob, x_selected, x_main, x_bench, x_transfer_in, x_transfer_out, x_captain = create_optimization_problem(players, budget, bench_budget, decay_factors, num_weeks, start_week, locked_players)
 
     # Solve the problem
     prob.solve()
@@ -159,11 +161,15 @@ def display_team(players, selected_main_players, selected_bench_players, selecte
         total_value = main_players_df['price'].sum() + bench_players_df['price'].sum()
         print(f"Total team value: {total_value:.1f}")
 
+        # Sort by position ascending, then GW points descending
+        main_players_sorted = main_players_df.sort_values(by=['position', gw_column], ascending=[True, False])
+        bench_players_sorted = bench_players_df.sort_values(by=['position', gw_column], ascending=[True, False])
+
         print("Main players:")
-        print(main_players_df[['name', 'position', 'team', 'price', gw_column]])
+        print(main_players_sorted[['name', 'position', 'team', 'price', gw_column]])
 
         print("\nBench players:")
-        print(bench_players_df[['name', 'position', 'team', 'price', gw_column]])
+        print(bench_players_sorted[['name', 'position', 'team', 'price', gw_column]])
 
         captain_name = players.loc[selected_captains[week], 'name']
         print(f"\nCaptain: {captain_name}")
@@ -172,7 +178,9 @@ def display_team(players, selected_main_players, selected_bench_players, selecte
 players_df = load_player_data()
 
 # Optimize the team
-selected_main_players, selected_bench_players, selected_captains, transfers = optimize_team(players_df, budget, min_bench_budget, num_weeks, decay_rate, start_week, locked_players)
+selected_main_players, selected_bench_players, selected_captains, transfers = optimize_team(
+    players_df, budget, bench_budget, num_weeks, decay_rate, start_week, locked_players
+)
 
 # Display the selected players with names and their scores for each gameweek
 display_team(players_df, selected_main_players, selected_bench_players, selected_captains)
